@@ -1,0 +1,464 @@
+
+tablke of contents
+
+main header
+              .....
+         .d$$$$*$$$$$$bc
+      .d$P"    d$$    "*$$.
+     d$"      4$"$$      "$$.
+   4$P   /    $F ^$F    /   "$c
+  z$%        d$   3$        ^$L
+ 4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+ $$$F"""""""$F""""""$F"""""C$$*$
+.$%"$$e    d$       3$   z$$"  $F
+4$    *$$.4$"        $$d$P"    $$
+4$      ^*$$.       .d$F       $$
+4$   /   d$"$$c   z$$"3$    /  $F
+ $L     4$"  ^*$$$P"   $$     4$"
+ 3$     $F   .d$P$$e   ^$F    $P
+  $$   d$  .$$"    "$$c 3$   d$
+   *$.4$"z$$"        ^*$$$$ $$
+    "$$$$P"     /       "$$$P
+      *$b.             .d$P"
+        "$$$ec.....ze$$$"
+            "**$$$**""
+
+
+subsection
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+
+subsection
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
+
+subsection
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+tips
+
+   __   _
+ _(  )_( )_
+(_   _    _)
+  (_) (__)
+
+subsection
+  
+qoOop
+(===)
+"""""
+
+
+
+installation
+
+              .....
+         .d$$$$*$$$$$$bc
+      .d$P"    d$$    "*$$.
+     d$"      4$"$$      "$$.
+   4$P   /    $F ^$F    /   "$c
+  z$%        d$   3$        ^$L
+ 4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+ $$$F"""""""$F""""""$F"""""C$$*$
+.$%"$$e    d$       3$   z$$"  $F
+4$    *$$.4$"        $$d$P"    $$
+4$      ^*$$.       .d$F       $$
+4$   /   d$"$$c   z$$"3$    /  $F
+ $L     4$"  ^*$$$P"   $$     4$"
+ 3$     $F   .d$P$$e   ^$F    $P
+  $$   d$  .$$"    "$$c 3$   d$
+   *$.4$"z$$"        ^*$$$$ $$
+    "$$$$P"     /       "$$$P
+      *$b.             .d$P"
+        "$$$ec.....ze$$$"
+            "**$$$**""
+
+
+npm install --save-dev jasmine
+
+https://github.com/jasmine/jasmine-npm
+
+to initalize
+
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+
+npx jasmine init
+node_modules/.bin/jasmine init
+
+
+
+to give your project examples
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
+npx jasnime examples
+
+
+to run it
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
+
+npx jasmine
+
+
+
+
+Configuration
+
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+
+located at spec/support/jasmine.json
+
+alternatively
+
+jasmine JASMINE_CONFIG_PATH=relative/path/to/your/jasmine.json
+jasmine --config=relative/path/to/your/jasmine.json
+
+
+Filtering specs
+
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+
+Execute only those specs which filename match given glob:
+
+jasmine "spec/**/critical/*Spec.js"
+Or a single file:
+
+jasmine spec/currentSpec.js
+Or execute only those specs which name matches a particular regex:
+
+jasmine --filter "adapter21*"
+(where the name of a spec is the first parameter passed to describe())
+
+
+
+
+Configuration
+
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+
+known as jasmine.json
+
+so in jasmine all of your tests are known as specs
+
+{
+  // Spec directory path relative to the current working dir when jasmine is executed.
+  "spec_dir": "spec",
+
+  // Array of filepaths (and globs) relative to spec_dir to include and exclude
+  "spec_files": [
+    "**/*[sS]pec.js",
+    "!**/*nospec.js"
+  ],
+
+  // Array of filepaths (and globs) relative to spec_dir to include before jasmine specs
+  "helpers": [
+    "helpers/**/*.js"
+  ],
+
+  // Stop execution of a spec after the first expectation failure in it
+  "stopSpecOnExpectationFailure": false,
+
+  // Run specs in semi-random order
+  "random": false
+}
+
+
+
+Running Tests
+
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+node node_modules/jasmine/bin/jasmine.js
+npx jasmine
+
+
+run one test
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+jasmine spec/appSpec.js
+jasmine "**/model/**/critical/**/*Spec.js"
+
+
+CLI Options
+
+
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
+JASMINE_CONFIG_PATH=
+Specify a relative or absolute path to your configuration file. Can be used as an option or set as an environment variable.
+
+JASMINE_CONFIG_PATH=spec/config/jasmine.json jasmine
+
+jasmine --config=spec/config/jasmine.json
+--no-color
+Turns off color in spec output
+
+jasmine --no-color
+--filter=
+Only runs specs that match the given string
+
+jasmine --filter="a spec name"
+--stop-on-failure=[true|false]
+Stops execution of a spec after the first expectation failure when set to true
+
+jasmine --stop-on-failure=true
+--random=[true|false]
+Tells jasmine to run specs in semi random order or not for this run, overriding jasmine.json
+
+jasmine --random=true
+--seed=
+Sets the randomization seed if randomization is turned on
+
+jasmine --seed=4321
+--reporter=
+Sets the reporter default reporter implementation. Must be a valid node.js module name and needs installed in your project. If Jasmine-npm cannot load it it will use the default one.
+
+npm i --save-dev jasmine-ts-console-reporter
+jasmine --reporter=jasmine-ts-console-reporter
+
+
+
+
+Using jhe library
+
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
+if you want granaular control
+
+var Jasmine = require('jasmine');
+var jasmine = new Jasmine();
+
+
+load config file
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+jasmine.loadConfigFile('spec/support/jasmine.json');
+
+jasmine.loadConfig({
+    spec_dir: 'spec',
+    spec_files: [
+        'appSpec.js',
+        'requests/**/*[sS]pec.js',
+        'utils/**/*[sS]pec.js'
+    ],
+    helpers: [
+        'helpers/**/*.js'
+    ]
+});
+
+
+
+Custom onComplete
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+tells a task runner (karma) whether a spec has completed or not
+
+jasmine.onComplete(function(passed) {
+    if(passed) {
+        console.log('All specs have passed');
+    }
+    else {
+        console.log('At least one spec has failed');
+    }
+});
+
+
+
+Reporters
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+
+jasmine.configureDefaultReporter({
+    // The `timer` passed to the reporter will determine the mechanism for seeing how long the suite takes to run.
+    timer: new jasmine.jasmine.Timer(),
+    // The `print` function passed the reporter will be called to print its results.
+    print: function() {
+        process.stdout.write(arguments);
+    },
+    // `showColors` determines whether or not the reporter should use ANSI color codes.
+    showColors: true
+});
+
+A ConsoleReporter is included if no other reporters are added
+
+
+addReporter
+
+    qoOop
+    (===)
+    """""
+
+if you add a reporter jasmine will not add the default one
+
+
+var CustomReporter = require('./myCustomReporter');
+var customReporter = new CustomReporter();
+
+jasmine.addReporter(customReporter);
+
+
+Run the tests
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+jasmine.execute();
+jasmine.execute(['fooSpec.js'], 'a spec name');
+
+
+a simple example
+
+APIjasmine.js
