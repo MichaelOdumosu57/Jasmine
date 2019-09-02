@@ -462,3 +462,332 @@ jasmine.execute(['fooSpec.js'], 'a spec name');
 a simple example
 
 APIjasmine.js
+
+
+
+
+
+How Jasmine Works
+
+              .....
+         .d$$$$*$$$$$$bc
+      .d$P"    d$$    "*$$.
+     d$"      4$"$$      "$$.
+   4$P   /    $F ^$F    /   "$c
+  z$%        d$   3$        ^$L
+ 4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+ $$$F"""""""$F""""""$F"""""C$$*$
+.$%"$$e    d$       3$   z$$"  $F
+4$    *$$.4$"        $$d$P"    $$
+4$      ^*$$.       .d$F       $$
+4$   /   d$"$$c   z$$"3$    /  $F
+ $L     4$"  ^*$$$P"   $$     4$"
+ 3$     $F   .d$P$$e   ^$F    $P
+  $$   d$  .$$"    "$$c 3$   d$
+   *$.4$"z$$"        ^*$$$$ $$
+    "$$$$P"     /       "$$$P
+      *$b.             .d$P"
+        "$$$ec.....ze$$$"
+            "**$$$**
+
+
+Your First Suite
+
+
+
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+              
+              
+describiing Tests
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
+describe is for describing a group of related specs
+
+the actual sepc is done by the function it
+
+you concatentate the string in describe and it for meaningful spec names by BDD standards
+
+describe("A suite", function() {
+  it("contains spec with an expectation", function() {
+    expect(true).toBe(true);
+  });
+});
+
+
+Spec
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+
+generated with an it function
+it("contains spec with an expectation", function() {
+    ...
+});
+
+   __   _
+ _(  )_( )_
+(_   _    _)
+  (_) (__)       the describe and it they are ()=>{}
+
+
+
+
+Expectations
+
+qoOop
+(===)
+"""""
+
+expect(player).not.toBePlaying(song);
+
+they go inside the spec and takes the actual value of the test
+they must coming with a "Matching' A method that takes the expected value of the test
+
+
+Setup and Teardown
+
+qoOop
+(===)
+"""""
+
+to remove duplicated setups
+check out beforeEach, afterEach, beforeAll, and afterAll " fns
+
+
+file /home/uoul/My_Computer/Testing/Jasmine/spec/support/spec/jasmine_examples/PlayerSpec.js
+
+the beforeEach function is called once before each spec in the describe in which it is called
+the afterEach function is called once after each spec.
+The beforeAll function is called only once before all the specs in describe are run
+the afterAll function is called after all specs finish in the descibe
+
+use the beforeEach afterEach before calling specs
+
+this keyword
+
+qoOop
+(===)
+"""""
+
+can pass variable from one spec to another they all have the this
+
+describe("A spec", function() {
+  beforeEach(function() {
+    this.foo = 0;
+  });
+
+  it("can use the `this` to share state", function() {
+    expect(this.foo).toEqual(0);
+    this.bar = "test pollution?";
+  });
+
+  it("prevents test pollution by having an empty `this` created for the next spec", function() {
+    expect(this.foo).toEqual(0);
+    expect(this.bar).toBe(undefined);
+  });
+});
+ 
+"
+failing a spec
+
+qoOop
+(===)
+"""""
+
+if you dont know how to make a test fail use the fail function
+
+describe("A spec using the fail function", function() {
+  var foo = function(x, callBack) {
+    if (x) {
+      callBack();
+    }
+  };
+
+  it("should not call the callBack", function() {
+    foo(false, function() {
+      fail("Callback has been called");
+    });
+  });
+});
+"
+
+you can nest descibes to describe blocks
+
+qoOop
+(===)
+""""""
+
+
+Disabling Suites
+
+
+qoOop
+(===)
+""""""
+
+to disable a suite use xdescribe, nothing is run in there
+their results show as pending
+
+
+Pending Specs
+
+
+qoOop
+(===)
+""""""
+
+any spec  with xit function
+any spec without a fn
+a pending() in a sepc
+
+
+     
+Spies
+      
+      
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+a test double fn
+stubs any fn and track calls to it and its args
+only exists in the desrcibe or it block
+you can describe what the spy will do with and()
+
+
+
+toHaveBeenCalled
+
+qoOop
+(===)
+""""""
+
+pass if spy was called
+
+
+
+toHaveBeenCalledTimes
+
+qoOop
+(===)
+""""""
+
+if spy was called a specific # of times
+
+
+toHaveBeenCalledWith
+
+qoOop
+(===)
+""""""
+
+retruns true is the fn was called with a certain argument
+
+you can get any information about spy with .calls on the fn being spyed on
+
+
+
+Spies: createSpy
+
+qoOop
+(===)
+""""""
+
+creates a bareSpy with nothing to spy on
+
+
+Spies: createSpyObj
+
+qoOop
+(===)
+""""""
+
+if you have seceral fn u want to track use jasmine.createSpyObj
+
+
+
+
+
+Jasmine API
+              .....
+         .d$$$$*$$$$$$bc
+      .d$P"    d$$    "*$$.
+     d$"      4$"$$      "$$.
+   4$P   /    $F ^$F    /   "$c
+  z$%        d$   3$        ^$L
+ 4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+ $$$F"""""""$F""""""$F"""""C$$*$
+.$%"$$e    d$       3$   z$$"  $F
+4$    *$$.4$"        $$d$P"    $$
+4$      ^*$$.       .d$F       $$
+4$   /   d$"$$c   z$$"3$    /  $F
+ $L     4$"  ^*$$$P"   $$     4$"
+ 3$     $F   .d$P$$e   ^$F    $P
+  $$   d$  .$$"    "$$c 3$   d$
+   *$.4$"z$$"        ^*$$$$ $$
+    "$$$$P"     /       "$$$P
+      *$b.             .d$P"
+        "$$$ec.....ze$$$"
+            "**$$$**""
+
+Global
+
+              v
+       \             /
+
+          _________
+ `       /         \      '
+        /  \     /  \
+       /             \
+_     /   _ _ . _ _   \    _
+      \               /
+       \             /
+        \  /     \  /
+ '       \_________/      `
+
+
+       /             \
+              ^
+
+Methods
+
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+
