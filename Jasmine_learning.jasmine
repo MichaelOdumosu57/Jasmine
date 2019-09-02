@@ -1,4 +1,5 @@
 
+read with LogiQL script
 tablke of contents
 
 main header
@@ -732,6 +733,57 @@ qoOop
 """"""
 
 if you have seceral fn u want to track use jasmine.createSpyObj
+
+
+
+
+Matching with more finesse
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+for not exact equality
+jasmine.any takes technincally a constructor or class
+its jus matching types
+
+qoOop
+(===)
+""""""
+
+jasmine.anything returns true if the actual value is not null or undefined.
+
+
+qoOop
+(===)
+""""""
+
+jasmine.objectContaining is for key value pairs
+
+
+qoOop
+(===)
+""""""
+
+jasmine.arrayContaining for certain values in an array
+
+
+qoOop
+(===)
+""""""
+
+jasmine.stringMatching is regex comp
+
+
+qoOop
+(===)
+""""""
+
+Custom asymmetric equality tester
+
+when you need granaular control of what you need to compare in a test result
 
 
 
