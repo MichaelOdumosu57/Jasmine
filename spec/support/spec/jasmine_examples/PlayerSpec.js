@@ -445,9 +445,151 @@ describe("Using async/await", function() {
 });
 
 
+describe("mocking ajax", function() {
 
+  describe("suite wide usage", function() {
+
+    beforeEach(function() {
+      jasmine.Ajax.install();
+
+
+    afterEach(function() {
+      jasmine.Ajax.uninstall();
+    });
+
+    it("specifying response when you need it", function() {
+      var doneFn = jasmine.createSpy("success");
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(args) {
+        if (this.readyState == this.DONE) {
+          doneFn(this.responseText);
+        }
+      };
+
+      xhr.open("GET", "/some/cool/url");
+      xhr.send();
+
+      expect(jasmine.Ajax.requests.mostRecent().url).toBe('/some/cool/url');
+      expect(doneFn).not.toHaveBeenCalled();
+
+      jasmine.Ajax.requests.mostRecent().respondWith({
+
+        "status": 200,
+
+        "contentType": 'text/plain',
+
+        "responseText": 'awesome response'
+      });
+
+      expect(doneFn).toHaveBeenCalledWith('awesome response');
+    });
+
+    it("allows responses to be setup ahead of time", function () {
+      var doneFn = jasmine.createSpy("success");
+
+      jasmine.Ajax.stubRequest('/another/url').andReturn({
+        "responseText": 'immediate response'
+      });
+
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(args) {
+        if (this.readyState == this.DONE) {
+          doneFn(this.responseText);
+        }
+      };
+
+      xhr.open("GET", "/another/url");
+      xhr.send();
+
+      expect(doneFn).toHaveBeenCalledWith('immediate response');
+    });
+  });
+
+  it("allows use in a single spec", function() {
+    var doneFn = jasmine.createSpy('success');
+    jasmine.Ajax.withMock(function() {
+      var xhr = new XMLHttpRequest();
+      xhr.onreadystatechange = function(args) {
+        if (this.readyState == this.DONE) {
+          doneFn(this.responseText);
+        }
+      };
+
+      xhr.open("GET", "/some/cool/url");
+      xhr.send();
+
+      expect(doneFn).not.toHaveBeenCalled();
+
+      jasmine.Ajax.requests.mostRecent().respondWith({
+        "status": 200,
+        "responseText": 'in spec response'
+      });
+
+      expect(doneFn).toHaveBeenCalledWith('in spec response');
+    });
+  });
+});
     
 });
 });
-    
+
+
+(function() {
+
+  window.jasmine = jasmineRequire.core(jasmineRequire);
+
+  jasmineRequire.html(jasmine);
+
+  var env = jasmine.getEnv();
+
+
+  var jasmineInterface = jasmineRequire.interface(jasmine, env);
+
+
+  jasmineInterface.before = jasmineInterface.beforeEach;
+
+
+  jasmineInterface.after = jasmineInterface.afterEach;
+
+
+  jasmineInterface.context = jasmineInterface.describe;
+
+  if (typeof window == "undefined" && typeof exports == "object") {
+    extend(exports, jasmineInterface);
+  } else {
+    extend(window, jasmineInterface);
+  }
+
+
+  var specFilter = new jasmine.HtmlSpecFilter({
+    filterString: function() { return queryString.getParam("spec"); }
+  });
+
+  env.specFilter = function(spec) {
+    return specFilter.matches(spec.getFullName());
+  };
+
+  window.setTimeout = window.setTimeout;
+  window.setInterval = window.setInterval;
+  window.clearTimeout = window.clearTimeout;
+  window.clearInterval = window.clearInterval;
+
+
+  var currentWindowOnload = window.onload;
+
+  window.onload = function() {
+    if (currentWindowOnload) {
+      currentWindowOnload();
+    }
+    env.execute(env.topSuite().id);
+  };
+
+
+  function extend(destination, source) {
+    for (var property in source) destination[property] = source[property];
+    return destination;
+  }
+
+}());
 });

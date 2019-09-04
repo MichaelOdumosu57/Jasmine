@@ -1,1 +1,1 @@
-learned about dealing with async in jasmine
+learned about setting up custom boot on jasmine, how by default things are loaded in the browser, but you can modify suite characteristics such as the name of the it and describe fn

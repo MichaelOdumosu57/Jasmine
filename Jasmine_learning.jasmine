@@ -879,7 +879,101 @@ by default jasmine waits 5 seconds for tests to complete
 to change proivde a number to the 3rd parameter of it or outside your top level describe set jasmine.DEFAULT_TIMEOUT_INTERVAL
 
 
+Mocking AJAX
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+    
+    
+Tsting AJAX
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+           
+
+to use it download mock-ajax.js and  place it in helpers file
+
+
+basic usage across entire suite
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+           
+
+When you want to mock out all ajax calls across an entire suite, use install() in a beforeEach.
+
+Because jasmine-ajax stubs out the global XMLHttpRequest for the page, you'll want to uninstall() in an afterEach so specs or setup that expect to make a real ajax request can.
+it should mock the XMLHTTPRequest Object
+
+there is a state where we can run spinners on the intermed states of the XHR
+
+then tell the request what it should look like
+
+Now that we've told the request to respond, our callback gets called.
+also specify responses ahead of time
+
+ stubRequest with the url you want to return immediately. Then andReturn receives the same type of argument as respondWith
+ 
+ If you only want to use it in a single spec, you can use withMock. withMock takes a function that will be called after ajax has been mocked, and the mock will be uninstalled when the function completes.
+
+
+Custom Boot
+  --------------------
+  / ~~~~~     ~~~~~ \
+ /|     |     |\
+ W   ---  / \  ---   W
+ \.      |o o|      ./
+  |                 |
+  \    #########    /
+   \  ## ----- ##  /
+    \##         ##/
+    ---------------
+    
+
+¶
+If you want to customize your jasmine environment you can customize your boot.js file.
+
+The core of boot.js should stay the same, but you can add new things to the interface or configure things by changing this file.
+    
+    
   
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+Once the core jasmine interface has been loaded, you can add new functions or rewrite existing functions.
+, we're adding some aliases so before is the same as beforeEach
+s the same as afterEach
+ context is the same as describe
+  
+  
+Adding a customer helper
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+you  cand add yr custom reporter in addition or in place of jsApiReporter and htmlReporter
+you can also customize how specs are filtered from the current run by changing the env.specFilter function
+Alternately, specs to be run may also be specified after the tests have been parsed by passing an array of suite or spec IDs to the execute function. These IDs can be gleaned by traversing the tree of parsed tests accessible via env.topSuite().
+
+By default, Jasmine will begin execution when the onload event is triggered in the browser. Replace this portion, if you want to wait for something else before calling execute
+
+Helper function to add the Jasmine public interface to the correct object.
 
 
 Jasmine API
