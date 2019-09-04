@@ -1093,17 +1093,80 @@ it will be availble for every expectation
         \##         ##/
         ---------------
         
+its just an object with functions, hoever it never throws an error if you miss a listed function
+
         
-Matcher Factories
+jasmineStarted
       -"""-.__
      /    '  \
     ;  '.  :  c
     "\._ ) ::-"
        ""m "
        
+a fn where all the specs are loaded but the suite test has not started
+suiteInfo contains all the info about the suite
        
        
+suiteStarted
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
        
+called when a describe starts to run
+
+
+specStarted
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+       
+when an it even before and after start to run
+
+
+specDone
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+       
+a reporter wont know if a spec has failed without this fn
+
+
+suiteDone
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+       
+all specs and child suites have run, a reporter also wont know if specs in the
+suite has failed
+
+
+
+jasmineDone
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+when the entire suite has finished, a reporter needs to know about it
+
+       
+Register the reporter with jasmine
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+       
+jasmine.getEnv().addReporter(myReporter);
         
         
         
