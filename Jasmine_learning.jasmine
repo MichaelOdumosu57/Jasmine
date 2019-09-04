@@ -1695,3 +1695,196 @@ SuiteResult
 +--------------------+---------------------+-----------------------------------------------------------------------------------------+
 | status             | String              | Once the suite has completed this string represents the pass/fail status of this suite. |
 +--------------------+---------------------+-----------------------------------------------------------------------------------------+
+
+
+
+        Classes
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+        
+        Clock
+        
+        this is Jasmine mock clock used for testing time dependent code
+        
+        the constructor is new Clock() but  dont do this there should be only one clock and jasmine makes this at boot
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+            
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+                       
+        install() → {Clock}
+        Install the mock clock over the built-in methods.
+
+    
+        mockDate(initialDateopt)
+        Instruct the installed Clock to also mock the date returned by new Date()
+        
+        
+        +-------------+------+------------+---------+----------------------+
+        | Name        | Type | Attributes | Default | Description          |
+        +-------------+------+------------+---------+----------------------+
+        | initialDate | Date | <optional> | now     | The Date to provide. |
+        +-------------+------+------------+---------+----------------------+
+        
+        
+        tick(millis)
+        Tick the Clock forward, running any enqueued timeouts along the way
+
+        +--------+------+-------------------------------------+
+        | Name   | Type | Description                         |
+        +--------+------+-------------------------------------+
+        | millis | int  | The number of milliseconds to tick. |
+        +--------+------+-------------------------------------+
+                       
+        uninstall()
+        Uninstall the mock clock, returning the built-in methods to their places.
+        
+        
+        withMock(Function)
+        Execute a function with a mocked Clock
+        
+        The clock will be installed before the function is called and uninstalled in a finally after the function completes.
+        
+        
+        Env
+        
+        the jasmine env
+        
+        jasmine will make one during booting
+        
+        you access with jasmine.Env()
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+        addReporter(reporterToAdd)
+        with  the type of reporter
+                    
+                    
+        jsApiReporter
+        
+        the actual one is made by default in boot.js an instance is made availble as jsApiReporter on the global object
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+            
+        executionTime() full # of ms for jasime to run
+        
+        
+        specResults(index, length) → {Array.<SpecResult>} get a list of specs
+        
+        +--------+--------+-----------------------------------------------+
+        | Name   | Type   | Description                                   |
+        +--------+--------+-----------------------------------------------+
+        | index  | Number | The position in the specs list to start from. |
+        +--------+--------+-----------------------------------------------+
+        | length | Number | Maximum number of specs results to return.    |
+        +--------+--------+-----------------------------------------------+
+        
+        
+        specs() → {Array.<SpecResult>}
+        Get all spec results.
+                        
+                
+        status() → {String}
+        Get the current status for the Jasmine environment.
+        
+        loaded, started, or done.
+        
+        
+        suiteResults(index, length) → {Array.<SuiteResult>}
+                
+        +--------+--------+------------------------------------------------+
+        | Name   | Type   | Description                                    |
+        +--------+--------+------------------------------------------------+
+        | index  | Number | The position in the suites list to start from. |
+        +--------+--------+------------------------------------------------+
+        | length | Number | Maximum number of suite results to return.     |
+        +--------+--------+------------------------------------------------+
+        
+        
+        suites() → {Object}
+        Get all of the suites in a single object, with their id as the key.
+        
+        Returns:
+        Map of suite id to SuiteResult
+        Type
+        Object
+        
+        
+        Spy()
+        
+        helps watch fns for testing
+        
+        use spyOn, spyOnProperty, jasmine.createSpy, or jasmine.createSpyObj
+        
+        refer on the documentation for spy
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+        +-----------------+--------+-------------------------------------------+
+        | Name            | Type   | Description                               |
+        +-----------------+--------+-------------------------------------------+
+        | object          | object | this context for the invocation.          |
+        +-----------------+--------+-------------------------------------------+
+        | invocationOrder | number | Order of the invocation.                  |
+        +-----------------+--------+-------------------------------------------+
+        | args            | Array  | The arguments passed for this invocation. |
+        +-----------------+--------+-------------------------------------------+
