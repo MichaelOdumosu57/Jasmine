@@ -823,7 +823,7 @@
         you can use jasmine to mock the current date
         
         
-        Asynchronous Support
+        Asynchronous Support if you have problems refer to the tutorials in your firstt suite its that 3.0 stuff
         
         
               -"""-.__
@@ -1265,7 +1265,7 @@
             
             
         
-        Jasmine API
+        Jasmine API your version is 2.9
                       .....
                  .d$$$$*$$$$$$bc
               .d$P"    d$$    "*$$.
@@ -1319,3 +1319,379 @@
             \##         ##/
             ---------------
         
+
+        afterAll
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        
+        afterAll(functionopt, timeoutopt)
+        Run some shared teardown once after all of the specs in the describe are run.
+        
+        Note: Be careful, sharing the teardown from a afterAll makes it easy to accidentally leak state between your specs so that they erroneously pass or fail.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        function	implementationCallback	<optional>
+        Function that contains the code to teardown your specs.
+        
+        timeout	Int	<optional>
+        jasmine.DEFAULT_TIMEOUT_INTERVAL
+        Custom timeout for an async afterAll.
+        
+        
+        afterEach(functionopt, timeoutopt)
+        Run some shared teardown after each of the specs in the describe in which it is called.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        function	implementationCallback	<optional>
+        Function that contains the code to teardown your specs.
+        
+        timeout	Int	<optional>
+        jasmine.DEFAULT_TIMEOUT_INTERVAL
+        Custom timeout for an async afterEach.
+        
+        
+        beforeAll(functionopt, timeoutopt)
+        Run some shared setup once before all of the specs in the describe are run.
+        
+        Note: Be careful, sharing the setup from a beforeAll makes it easy to accidentally leak state between your specs so that they erroneously pass or fail.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        function	implementationCallback	<optional>
+        Function that contains the code to setup your specs.
+        
+        timeout	Int	<optional>
+        jasmine.DEFAULT_TIMEOUT_INTERVAL
+        Custom timeout for an async beforeAll.
+        
+        
+        beforeEach(functionopt, timeoutopt)
+        Run some shared setup before each of the specs in the describe in which it is called.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        function	implementationCallback	<optional>
+        Function that contains the code to setup your specs.
+        
+        timeout	Int	<optional>
+        jasmine.DEFAULT_TIMEOUT_INTERVAL
+        Custom timeout for an async beforeEach.
+        
+        
+        describe(description, specDefinitions)
+        Create a group of specs (often called a suite).
+        
+        Calls to describe can be nested within other calls to compose your suite as a tree.
+        
+        Parameters:
+        Name	Type	Description
+        description	String
+        Textual description of the group
+        
+        specDefinitions	function
+        Function for Jasmine to invoke that will define inner suites and specs
+
+
+        expect(actual) → {matchers}
+        Create an expectation for a spec.
+        
+        Parameters:
+        Name	Type	Description
+        actual	Object
+        Actual computed value to test expectations against.
+        
+        Returns:
+        Type
+        matchers
+                
+                
+        fail(erroropt)
+        Explicitly mark a spec as failed.
+        
+        Parameters:
+        Name	Type	Attributes	Description
+        error	String | Error	<optional>
+        Reason for the failure.
+        
+                
+        fdescribe(description, specDefinitions)
+        A focused describe
+        
+        If suites or specs are focused, only those that are focused will be executed
+        
+        Parameters:
+        Name	Type	Description
+        description	String
+        Textual description of the group
+        
+        specDefinitions	function
+        Function for Jasmine to invoke that will define inner suites and specs
+        
+        See:
+        fit
+                
+
+
+        fit(description, testFunction, timeoutopt)
+        A focused it
+        
+        If suites or specs are focused, only those that are focused will be executed.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        description	String
+        Textual description of what this spec is checking.
+        
+        testFunction	implementationCallback
+        Function that contains the code of your test.
+        
+        timeout	Int	<optional>
+        jasmine.DEFAULT_TIMEOUT_INTERVAL
+        Custom timeout for an async spec.
+        
+        
+        it(description, testFunctionopt, timeoutopt)
+        Define a single spec. A spec should contain one or more expectations that test the state of the code.
+        
+        A spec whose expectations all succeed will be passing and a spec with any failures will fail.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        description	String
+        Textual description of what this spec is checking
+        
+        testFunction	implementationCallback	<optional>
+        Function that contains the code of your test. If not provided the test will be pending.
+        
+        timeout	Int	<optional>
+        jasmine.DEFAULT_TIMEOUT_INTERVAL
+        Custom timeout for an async spec.
+
+
+        pending(messageopt)
+        Mark a spec as pending, expectation results will be ignored.
+        
+        Parameters:
+        Name	Type	Attributes	Description
+        message	String	<optional>
+        Reason the spec is pending.
+
+
+
+        spyOn(obj, methodName) → {Spy}
+        Install a spy onto an existing object.
+        
+        Parameters:
+        Name	Type	Description
+        obj	Object
+        The object upon which to install the Spy.
+        
+        methodName	String
+        The name of the method to replace with a Spy.
+        
+        Returns:
+        Type
+        Spy
+        
+
+        spyOnProperty(obj, propertyName, accessTypeopt) → {Spy}
+        Install a spy on a property installed with Object.defineProperty onto an existing object.
+        
+        Parameters:
+        Name	Type	Attributes	Default	Description
+        obj	Object
+        The object upon which to install the Spy
+        
+        propertyName	String
+        The name of the property to replace with a Spy.
+        
+        accessType	String	<optional>
+        get
+        The access type (get|set) of the property to Spy on.
+        
+        Returns:
+        Type
+        Spy
+        
+        
+        xdescribe(description, specDefinitions)
+        A temporarily disabled describe
+        
+        Specs within an xdescribe will be marked pending and not executed
+        
+        Parameters:
+        Name	Type	Description
+        description	String
+        Textual description of the group
+        
+        specDefinitions	function
+        Function for Jasmine to invoke that will define inner suites and specs
+
+
+        xit(description, testFunctionopt)
+        A temporarily disabled it
+        
+        The spec will report as pending and will not be executed.
+        
+        Parameters:
+        Name	Type	Attributes	Description
+        description	String
+        Textual description of what this spec is checking.
+        
+        testFunction	implementationCallback	<optional>
+        Function that contains the code of your test. Will not be executed.
+                
+                
+        Type Definitions
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+                        
+                        
+                        
+        Expectation
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| Name        | Type    | Description                                                     |                                  |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| matcherName | String  | The name of the matcher that was executed for this expectation. |                                  |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| message     | String  | The failure message for the expectation.                        |                                  |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| stack       | String  | The stack trace for the failure if available.                   |                                  |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| passed      | Boolean | Whether the expectation passed or failed.                       |                                  |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| expected    | Object  | "If the expectation failed                                      | what was the expected value."    |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+| actual      | Object  | "If the expectation failed                                      | what actual value was produced." |
++-------------+---------+-----------------------------------------------------------------+----------------------------------+
+
+
+
+
+implementationCallback(doneopt)
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+Callback passed to parts of the Jasmine base interface.
+
+By default Jasmine assumes this function completes synchronously. If you have code that you need to test asynchronously, you can declare that you receive a done callback, return a Promise, or use the async keyword if it is supported in your environment.
++------+----------+------------+------------------------------------------------+
+| Name | Type     | Attributes | Description                                    |
++------+----------+------------+------------------------------------------------+
+| done | function | <optional> | async callback jasmine should wait bfr moving. |
++------+----------+------------+------------------------------------------------+
+
+
+
+
+JasmineDoneInfo
+Information passed to the Reporter#jasmineDone event.
+
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
++--------------------+---------------------+--------------------------------------------------------------------------------+
+| Name               | Type                | Description                                                                    |
++--------------------+---------------------+--------------------------------------------------------------------------------+
+| order              | Order               | Information about the ordering (random or not) of this execution of the suite. |
++--------------------+---------------------+--------------------------------------------------------------------------------+
+| failedExpectations | Array.<Expectation> | List of expectations that failed in an afterAll at the global level.           |
++--------------------+---------------------+--------------------------------------------------------------------------------+
+
+
+JasmineStartedInfo
+Information passed to the Reporter#jasmineStarted event.
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
++-------------------+-------+--------------------------------------------------------------------------------+
+| Name              | Type  | Description                                                                    |
++-------------------+-------+--------------------------------------------------------------------------------+
+| totalSpecsDefined | Int   | The total number of specs defined in this suite.                               |
++-------------------+-------+--------------------------------------------------------------------------------+
+| order             | Order | Information about the ordering (random or not) of this execution of the suite. |
++-------------------+-------+--------------------------------------------------------------------------------+
+
+
+
+SpecInfo
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| Name               | Type                | Description                                                                           |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| id                 | Int                 | The unique id of this spec.                                                           |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| description        | String              | The description passed to the it that created this spec.                              |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| fullName           | String              | The full description including all ancestors of this spec.                            |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| failedExpectations | Array.<Expectation> | The list of expectations that failed during execution of this spec.                   |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| passedExpectations | Array.<Expectation> | The list of expectations that passed during execution of this spec.                   |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| pendingReason      | String              | If the spec is pending this will be the reason.                                       |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+| status             | String              | Once the spec has completed this string represents the pass/fail status of this spec. |
++--------------------+---------------------+---------------------------------------------------------------------------------------+
+
+
+SuiteResult
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
+| Name               | Type                | Description                                                                             |
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
+| id                 | Int                 | The unique id of this suite.                                                            |
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
+| description        | String              | The description text passed to the describe that made this suite.                       |
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
+| fullName           | String              | The full description including all ancestors of this suite.                             |
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
+| failedExpectations | Array.<Expectation> | The list of expectations that failed in an afterAll for this suite.                     |
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
+| status             | String              | Once the suite has completed this string represents the pass/fail status of this suite. |
++--------------------+---------------------+-----------------------------------------------------------------------------------------+
