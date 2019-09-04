@@ -592,4 +592,87 @@ describe("mocking ajax", function() {
   }
 
 }());
+
+
+
+describe("custom equality", function() {
+
+
+  var myCustomEquality = function(first, second) {
+
+
+    if (typeof first == "string" && typeof second == "string") {
+      return first[0] == second[1];
+    }
+
+  };
+
+  beforeEach(function() {
+    jasmine.addCustomEqualityTester(myCustomEquality);
+  });
+
+  it("should be custom equal", function() {
+    expect("abc").toEqual("aaa");
+  });
+
+  it("should be custom not equal", function() {
+    expect("abc").not.toEqual("abc");
+  });
 });
+
+
+var customMatchers = {
+
+  toBeGoofy: function(util, customEqualityTesters) {
+
+    return {
+
+
+      compare: function(actual, expected) {
+
+        if (expected === undefined) {
+          expected = '';
+        }
+
+        var result = {};
+        result.pass = util.equals(actual.hyuk, "gawrsh" + expected, customEqualityTesters);
+
+        if (result.pass) {
+
+          result.message = "Expected " + actual + " not to be quite so goofy";
+        } else {
+
+          result.message = "Expected " + actual + " to be goofy, but it was not very goofy";
+        }
+    return result;
+      }
+    };
+  }
+};
+
+
+  beforeEach(function() {
+    jasmine.addMatchers(customMatchers);
+  });
+
+  it("is available on an expectation", function() {
+    expect({
+      hyuk: 'gawrsh'
+    }).toBeGoofy();
+  });
+
+  it("can take an 'expected' parameter", function() {
+    expect({
+      hyuk: 'gawrsh is fun'
+    }).toBeGoofy(' is fun');
+  });
+
+  it("can be negated", function() {
+    expect({
+      hyuk: 'this is fun'
+    }).not.toBeGoofy();
+  });
+});
+});
+
+
