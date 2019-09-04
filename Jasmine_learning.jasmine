@@ -2498,3 +2498,101 @@ Set this spy to do a shallow clone of arguments passed to each invocation.
 
                
 
+    Interfaces
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+                      
+        Reporter
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+all these objects these fn need are in the global section :)
+            
+
+jasmineDone(suiteInfo)
+When the entire suite has finished execution jasmineDone is called
+
+suiteInfo = jasmineDoneInfo
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+jasmineStarted(suiteInfo)
+jasmineStarted is called after all of the specs have been loaded, but just before execution starts.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+suiteInfo = jasmineStartedInfo
+
+
+specDone(result)
+specDone is invoked when an it and its associated beforeEach and afterEach functions have been run.
+result = specResult
+
+
+specStarted(result)
+specStarted is invoked when an it starts to run (including associated beforeEach functions)
+
+               
+result	= SpecResult
+               
+               
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+
+suiteDone(result)
+suiteDone is invoked when all of the child specs and suites for a given suite have been run
+
+result = SuiteResult
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+suiteStarted(result)
+suiteStarted is invoked when a describe starts to run
+
+
+result = SuiteResult
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
