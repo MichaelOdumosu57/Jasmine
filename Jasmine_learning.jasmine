@@ -1,830 +1,1169 @@
-    
-    read with LogiQL script
-    tablke of contents
-    
-    main header
-                  .....
-             .d$$$$*$$$$$$bc
-          .d$P"    d$$    "*$$.
-         d$"      4$"$$      "$$.
-       4$P   /    $F ^$F    /   "$c
-      z$%        d$   3$        ^$L
-     4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
-     $$$F"""""""$F""""""$F"""""C$$*$
-    .$%"$$e    d$       3$   z$$"  $F
-    4$    *$$.4$"        $$d$P"    $$
-    4$      ^*$$.       .d$F       $$
-    4$   /   d$"$$c   z$$"3$    /  $F
-     $L     4$"  ^*$$$P"   $$     4$"
-     3$     $F   .d$P$$e   ^$F    $P
-      $$   d$  .$$"    "$$c 3$   d$
-       *$.4$"z$$"        ^*$$$$ $$
-        "$$$$P"     /       "$$$P
-          *$b.             .d$P"
-            "$$$ec.....ze$$$"
-                "**$$$**""
-    
-    
-    subsection
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-    
-    subsection
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
-    
-    subsection
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    tips
-    
-       __   _
-     _(  )_( )_
-    (_   _    _)
-      (_) (__)
-    
-    subsection
-      
-    qoOop
-    (===)
-    """""
-    
-    
-    
-    installation
-    
-                  .....
-             .d$$$$*$$$$$$bc
-          .d$P"    d$$    "*$$.
-         d$"      4$"$$      "$$.
-       4$P   /    $F ^$F    /   "$c
-      z$%        d$   3$        ^$L
-     4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
-     $$$F"""""""$F""""""$F"""""C$$*$
-    .$%"$$e    d$       3$   z$$"  $F
-    4$    *$$.4$"        $$d$P"    $$
-    4$      ^*$$.       .d$F       $$
-    4$   /   d$"$$c   z$$"3$    /  $F
-     $L     4$"  ^*$$$P"   $$     4$"
-     3$     $F   .d$P$$e   ^$F    $P
-      $$   d$  .$$"    "$$c 3$   d$
-       *$.4$"z$$"        ^*$$$$ $$
-        "$$$$P"     /       "$$$P
-          *$b.             .d$P"
-            "$$$ec.....ze$$$"
-                "**$$$**""
-    
-    
-    npm install --save-dev jasmine
-    
-    https://github.com/jasmine/jasmine-npm
-    
-    to initalize
-    
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-    
-    npx jasmine init
-    node_modules/.bin/jasmine init
-    
-    
-    
-    to give your project examples
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
-    npx jasnime examples
-    
-    
-    to run it
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
-    
-    npx jasmine
-    
-    
-    
-    
-    Configuration
-    
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-    
-    located at spec/support/jasmine.json
-    
-    alternatively
-    
-    jasmine JASMINE_CONFIG_PATH=relative/path/to/your/jasmine.json
-    jasmine --config=relative/path/to/your/jasmine.json
-    
-    
-    Filtering specs
-    
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-    
-    Execute only those specs which filename match given glob:
-    
-    jasmine "spec/**/critical/*Spec.js"
-    Or a single file:
-    
-    jasmine spec/currentSpec.js
-    Or execute only those specs which name matches a particular regex:
-    
-    jasmine --filter "adapter21*"
-    (where the name of a spec is the first parameter passed to describe())
-    
-    
-    
-    
-    Configuration
-    
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-    
-    known as jasmine.json
-    
-    so in jasmine all of your tests are known as specs
-    
-    {
-      // Spec directory path relative to the current working dir when jasmine is executed.
-      "spec_dir": "spec",
-    
-      // Array of filepaths (and globs) relative to spec_dir to include and exclude
-      "spec_files": [
-        "**/*[sS]pec.js",
-        "!**/*nospec.js"
-      ],
-    
-      // Array of filepaths (and globs) relative to spec_dir to include before jasmine specs
-      "helpers": [
-        "helpers/**/*.js"
-      ],
-    
-      // Stop execution of a spec after the first expectation failure in it
-      "stopSpecOnExpectationFailure": false,
-    
-      // Run specs in semi-random order
-      "random": false
-    }
-    
-    
-    
-    Running Tests
-    
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    node node_modules/jasmine/bin/jasmine.js
-    npx jasmine
-    
-    
-    run one test
-    
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    jasmine spec/appSpec.js
-    jasmine "**/model/**/critical/**/*Spec.js"
-    
-    
-    CLI Options
-    
-    
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
-    JASMINE_CONFIG_PATH=
-    Specify a relative or absolute path to your configuration file. Can be used as an option or set as an environment variable.
-    
-    JASMINE_CONFIG_PATH=spec/config/jasmine.json jasmine
-    
-    jasmine --config=spec/config/jasmine.json
-    --no-color
-    Turns off color in spec output
-    
-    jasmine --no-color
-    --filter=
-    Only runs specs that match the given string
-    
-    jasmine --filter="a spec name"
-    --stop-on-failure=[true|false]
-    Stops execution of a spec after the first expectation failure when set to true
-    
-    jasmine --stop-on-failure=true
-    --random=[true|false]
-    Tells jasmine to run specs in semi random order or not for this run, overriding jasmine.json
-    
-    jasmine --random=true
-    --seed=
-    Sets the randomization seed if randomization is turned on
-    
-    jasmine --seed=4321
-    --reporter=
-    Sets the reporter default reporter implementation. Must be a valid node.js module name and needs installed in your project. If Jasmine-npm cannot load it it will use the default one.
-    
-    npm i --save-dev jasmine-ts-console-reporter
-    jasmine --reporter=jasmine-ts-console-reporter
-    
-    
-    
-    
-    Using jhe library
-    
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
-    if you want granaular control
-    
-    var Jasmine = require('jasmine');
-    var jasmine = new Jasmine();
-    
-    
-    load config file
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    jasmine.loadConfigFile('spec/support/jasmine.json');
-    
-    jasmine.loadConfig({
-        spec_dir: 'spec',
-        spec_files: [
-            'appSpec.js',
-            'requests/**/*[sS]pec.js',
-            'utils/**/*[sS]pec.js'
-        ],
-        helpers: [
-            'helpers/**/*.js'
-        ]
-    });
-    
-    
-    
-    Custom onComplete
-    
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    tells a task runner (karma) whether a spec has completed or not
-    
-    jasmine.onComplete(function(passed) {
-        if(passed) {
-            console.log('All specs have passed');
-        }
-        else {
-            console.log('At least one spec has failed');
-        }
-    });
-    
-    
-    
-    Reporters
-    
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    
-    jasmine.configureDefaultReporter({
-        // The `timer` passed to the reporter will determine the mechanism for seeing how long the suite takes to run.
-        timer: new jasmine.jasmine.Timer(),
-        // The `print` function passed the reporter will be called to print its results.
-        print: function() {
-            process.stdout.write(arguments);
-        },
-        // `showColors` determines whether or not the reporter should use ANSI color codes.
-        showColors: true
-    });
-    
-    A ConsoleReporter is included if no other reporters are added
-    
-    
-    addReporter
-    
+        
+        read with LogiQL script
+        tablke of contents
+        
+        main header
+                      .....
+                 .d$$$$*$$$$$$bc
+              .d$P"    d$$    "*$$.
+             d$"      4$"$$      "$$.
+           4$P   /    $F ^$F    /   "$c
+          z$%        d$   3$        ^$L
+         4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+         $$$F"""""""$F""""""$F"""""C$$*$
+        .$%"$$e    d$       3$   z$$"  $F
+        4$    *$$.4$"        $$d$P"    $$
+        4$      ^*$$.       .d$F       $$
+        4$   /   d$"$$c   z$$"3$    /  $F
+         $L     4$"  ^*$$$P"   $$     4$"
+         3$     $F   .d$P$$e   ^$F    $P
+          $$   d$  .$$"    "$$c 3$   d$
+           *$.4$"z$$"        ^*$$$$ $$
+            "$$$$P"     /       "$$$P
+              *$b.             .d$P"
+                "$$$ec.....ze$$$"
+                    "**$$$**""
+        
+        
+        subsection
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+        
+        subsection
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        
+        
+        subsection
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        tips
+        
+           __   _
+         _(  )_( )_
+        (_   _    _)
+          (_) (__)
+        
+        subsection
+          
         qoOop
         (===)
         """""
-    
-    if you add a reporter jasmine will not add the default one
-    
-    
-    var CustomReporter = require('./myCustomReporter');
-    var customReporter = new CustomReporter();
-    
-    jasmine.addReporter(customReporter);
-    
-    
-    Run the tests
-    
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    jasmine.execute();
-    jasmine.execute(['fooSpec.js'], 'a spec name');
-    
-    
-    a simple example
-    
-    APIjasmine.js
-    
-    
-    
-    
-    
-    How Jasmine Works
-    
-                  .....
-             .d$$$$*$$$$$$bc
-          .d$P"    d$$    "*$$.
-         d$"      4$"$$      "$$.
-       4$P   /    $F ^$F    /   "$c
-      z$%        d$   3$        ^$L
-     4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
-     $$$F"""""""$F""""""$F"""""C$$*$
-    .$%"$$e    d$       3$   z$$"  $F
-    4$    *$$.4$"        $$d$P"    $$
-    4$      ^*$$.       .d$F       $$
-    4$   /   d$"$$c   z$$"3$    /  $F
-     $L     4$"  ^*$$$P"   $$     4$"
-     3$     $F   .d$P$$e   ^$F    $P
-      $$   d$  .$$"    "$$c 3$   d$
-       *$.4$"z$$"        ^*$$$$ $$
-        "$$$$P"     /       "$$$P
-          *$b.             .d$P"
-            "$$$ec.....ze$$$"
-                "**$$$**
-    
-    
-    Your First Suite
-    
-    
-    
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-                  
-                  
-    describiing Tests
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
-    describe is for describing a group of related specs
-    
-    the actual sepc is done by the function it
-    
-    you concatentate the string in describe and it for meaningful spec names by BDD standards
-    
-    describe("A suite", function() {
-      it("contains spec with an expectation", function() {
-        expect(true).toBe(true);
-      });
-    });
-    
-    
-    Spec
-    
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    
-    generated with an it function
-    it("contains spec with an expectation", function() {
-        ...
-    });
-    
-       __   _
-     _(  )_( )_
-    (_   _    _)
-      (_) (__)       the describe and it they are ()=>{}
-    
-    
-    
-    
-    Expectations
-    
-    qoOop
-    (===)
-    """""
-    
-    expect(player).not.toBePlaying(song);
-    
-    they go inside the spec and takes the actual value of the test
-    they must coming with a "Matching' A method that takes the expected value of the test
-    
-    
-    Setup and Teardown
-    
-    qoOop
-    (===)
-    """""
-    
-    to remove duplicated setups
-    check out beforeEach, afterEach, beforeAll, and afterAll " fns
-    
-    
-    file /home/uoul/My_Computer/Testing/Jasmine/spec/support/spec/jasmine_examples/PlayerSpec.js
-    
-    the beforeEach function is called once before each spec in the describe in which it is called
-    the afterEach function is called once after each spec.
-    The beforeAll function is called only once before all the specs in describe are run
-    the afterAll function is called after all specs finish in the descibe
-    
-    use the beforeEach afterEach before calling specs
-    
-    this keyword
-    
-    qoOop
-    (===)
-    """""
-    
-    can pass variable from one spec to another they all have the this
-    
-    describe("A spec", function() {
-      beforeEach(function() {
-        this.foo = 0;
-      });
-    
-      it("can use the `this` to share state", function() {
-        expect(this.foo).toEqual(0);
-        this.bar = "test pollution?";
-      });
-    
-      it("prevents test pollution by having an empty `this` created for the next spec", function() {
-        expect(this.foo).toEqual(0);
-        expect(this.bar).toBe(undefined);
-      });
-    });
-     
-    "
-    failing a spec
-    
-    qoOop
-    (===)
-    """""
-    
-    if you dont know how to make a test fail use the fail function
-    
-    describe("A spec using the fail function", function() {
-      var foo = function(x, callBack) {
-        if (x) {
-          callBack();
+        
+        
+        
+        installation
+        
+                      .....
+                 .d$$$$*$$$$$$bc
+              .d$P"    d$$    "*$$.
+             d$"      4$"$$      "$$.
+           4$P   /    $F ^$F    /   "$c
+          z$%        d$   3$        ^$L
+         4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+         $$$F"""""""$F""""""$F"""""C$$*$
+        .$%"$$e    d$       3$   z$$"  $F
+        4$    *$$.4$"        $$d$P"    $$
+        4$      ^*$$.       .d$F       $$
+        4$   /   d$"$$c   z$$"3$    /  $F
+         $L     4$"  ^*$$$P"   $$     4$"
+         3$     $F   .d$P$$e   ^$F    $P
+          $$   d$  .$$"    "$$c 3$   d$
+           *$.4$"z$$"        ^*$$$$ $$
+            "$$$$P"     /       "$$$P
+              *$b.             .d$P"
+                "$$$ec.....ze$$$"
+                    "**$$$**""
+        
+        
+        npm install --save-dev jasmine
+        
+        https://github.com/jasmine/jasmine-npm
+        
+        to initalize
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+        
+        npx jasmine init
+        node_modules/.bin/jasmine init
+        
+        
+        
+        to give your project examples
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        
+        npx jasnime examples
+        
+        
+        to run it
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        
+        
+        npx jasmine
+        
+        
+        
+        
+        Configuration
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+        
+        located at spec/support/jasmine.json
+        
+        alternatively
+        
+        jasmine JASMINE_CONFIG_PATH=relative/path/to/your/jasmine.json
+        jasmine --config=relative/path/to/your/jasmine.json
+        
+        
+        Filtering specs
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+        
+        Execute only those specs which filename match given glob:
+        
+        jasmine "spec/**/critical/*Spec.js"
+        Or a single file:
+        
+        jasmine spec/currentSpec.js
+        Or execute only those specs which name matches a particular regex:
+        
+        jasmine --filter "adapter21*"
+        (where the name of a spec is the first parameter passed to describe())
+        
+        
+        
+        
+        Configuration
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+        
+        known as jasmine.json
+        
+        so in jasmine all of your tests are known as specs
+        
+        {
+          // Spec directory path relative to the current working dir when jasmine is executed.
+          "spec_dir": "spec",
+        
+          // Array of filepaths (and globs) relative to spec_dir to include and exclude
+          "spec_files": [
+            "**/*[sS]pec.js",
+            "!**/*nospec.js"
+          ],
+        
+          // Array of filepaths (and globs) relative to spec_dir to include before jasmine specs
+          "helpers": [
+            "helpers/**/*.js"
+          ],
+        
+          // Stop execution of a spec after the first expectation failure in it
+          "stopSpecOnExpectationFailure": false,
+        
+          // Run specs in semi-random order
+          "random": false
         }
-      };
-    
-      it("should not call the callBack", function() {
-        foo(false, function() {
-          fail("Callback has been called");
+        
+        
+        
+        Running Tests
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        node node_modules/jasmine/bin/jasmine.js
+        npx jasmine
+        
+        
+        run one test
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        jasmine spec/appSpec.js
+        jasmine "**/model/**/critical/**/*Spec.js"
+        
+        
+        CLI Options
+        
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        
+        JASMINE_CONFIG_PATH=
+        Specify a relative or absolute path to your configuration file. Can be used as an option or set as an environment variable.
+        
+        JASMINE_CONFIG_PATH=spec/config/jasmine.json jasmine
+        
+        jasmine --config=spec/config/jasmine.json
+        --no-color
+        Turns off color in spec output
+        
+        jasmine --no-color
+        --filter=
+        Only runs specs that match the given string
+        
+        jasmine --filter="a spec name"
+        --stop-on-failure=[true|false]
+        Stops execution of a spec after the first expectation failure when set to true
+        
+        jasmine --stop-on-failure=true
+        --random=[true|false]
+        Tells jasmine to run specs in semi random order or not for this run, overriding jasmine.json
+        
+        jasmine --random=true
+        --seed=
+        Sets the randomization seed if randomization is turned on
+        
+        jasmine --seed=4321
+        --reporter=
+        Sets the reporter default reporter implementation. Must be a valid node.js module name and needs installed in your project. If Jasmine-npm cannot load it it will use the default one.
+        
+        npm i --save-dev jasmine-ts-console-reporter
+        jasmine --reporter=jasmine-ts-console-reporter
+        
+        
+        
+        
+        Using jhe library
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        
+        if you want granaular control
+        
+        var Jasmine = require('jasmine');
+        var jasmine = new Jasmine();
+        
+        
+        load config file
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        jasmine.loadConfigFile('spec/support/jasmine.json');
+        
+        jasmine.loadConfig({
+            spec_dir: 'spec',
+            spec_files: [
+                'appSpec.js',
+                'requests/**/*[sS]pec.js',
+                'utils/**/*[sS]pec.js'
+            ],
+            helpers: [
+                'helpers/**/*.js'
+            ]
         });
-      });
-    });
-    "
-    
-    you can nest descibes to describe blocks
-    
-    qoOop
-    (===)
-    """"""
-    
-    
-    Disabling Suites
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    to disable a suite use xdescribe, nothing is run in there
-    their results show as pending
-    
-    
-    Pending Specs
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    any spec  with xit function
-    any spec without a fn
-    a pending() in a sepc
-    
-    
+        
+        
+        
+        Custom onComplete
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        tells a task runner (karma) whether a spec has completed or not
+        
+        jasmine.onComplete(function(passed) {
+            if(passed) {
+                console.log('All specs have passed');
+            }
+            else {
+                console.log('At least one spec has failed');
+            }
+        });
+        
+        
+        
+        Reporters
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        
+        jasmine.configureDefaultReporter({
+            // The `timer` passed to the reporter will determine the mechanism for seeing how long the suite takes to run.
+            timer: new jasmine.jasmine.Timer(),
+            // The `print` function passed the reporter will be called to print its results.
+            print: function() {
+                process.stdout.write(arguments);
+            },
+            // `showColors` determines whether or not the reporter should use ANSI color codes.
+            showColors: true
+        });
+        
+        A ConsoleReporter is included if no other reporters are added
+        
+        
+        addReporter
+        
+            qoOop
+            (===)
+            """""
+        
+        if you add a reporter jasmine will not add the default one
+        
+        
+        var CustomReporter = require('./myCustomReporter');
+        var customReporter = new CustomReporter();
+        
+        jasmine.addReporter(customReporter);
+        
+        
+        Run the tests
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        jasmine.execute();
+        jasmine.execute(['fooSpec.js'], 'a spec name');
+        
+        
+        a simple example
+        
+        APIjasmine.js
+        
+        
+        
+        
+        
+        How Jasmine Works
+        
+                      .....
+                 .d$$$$*$$$$$$bc
+              .d$P"    d$$    "*$$.
+             d$"      4$"$$      "$$.
+           4$P   /    $F ^$F    /   "$c
+          z$%        d$   3$        ^$L
+         4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+         $$$F"""""""$F""""""$F"""""C$$*$
+        .$%"$$e    d$       3$   z$$"  $F
+        4$    *$$.4$"        $$d$P"    $$
+        4$      ^*$$.       .d$F       $$
+        4$   /   d$"$$c   z$$"3$    /  $F
+         $L     4$"  ^*$$$P"   $$     4$"
+         3$     $F   .d$P$$e   ^$F    $P
+          $$   d$  .$$"    "$$c 3$   d$
+           *$.4$"z$$"        ^*$$$$ $$
+            "$$$$P"     /       "$$$P
+              *$b.             .d$P"
+                "$$$ec.....ze$$$"
+                    "**$$$**
+        
+        
+        Your First Suite
+        
+        
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+                      
+                      
+        describiing Tests
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        
+        describe is for describing a group of related specs
+        
+        the actual sepc is done by the function it
+        
+        you concatentate the string in describe and it for meaningful spec names by BDD standards
+        
+        describe("A suite", function() {
+          it("contains spec with an expectation", function() {
+            expect(true).toBe(true);
+          });
+        });
+        
+        
+        Spec
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        
+        generated with an it function
+        it("contains spec with an expectation", function() {
+            ...
+        });
+        
+           __   _
+         _(  )_( )_
+        (_   _    _)
+          (_) (__)       the describe and it they are ()=>{}
+        
+        
+        
+        
+        Expectations
+        
+        qoOop
+        (===)
+        """""
+        
+        expect(player).not.toBePlaying(song);
+        
+        they go inside the spec and takes the actual value of the test
+        they must coming with a "Matching' A method that takes the expected value of the test
+        
+        
+        Setup and Teardown
+        
+        qoOop
+        (===)
+        """""
+        
+        to remove duplicated setups
+        check out beforeEach, afterEach, beforeAll, and afterAll " fns
+        
+        
+        file /home/uoul/My_Computer/Testing/Jasmine/spec/support/spec/jasmine_examples/PlayerSpec.js
+        
+        the beforeEach function is called once before each spec in the describe in which it is called
+        the afterEach function is called once after each spec.
+        The beforeAll function is called only once before all the specs in describe are run
+        the afterAll function is called after all specs finish in the descibe
+        
+        use the beforeEach afterEach before calling specs
+        
+        this keyword
+        
+        qoOop
+        (===)
+        """""
+        
+        can pass variable from one spec to another they all have the this
+        
+        describe("A spec", function() {
+          beforeEach(function() {
+            this.foo = 0;
+          });
+        
+          it("can use the `this` to share state", function() {
+            expect(this.foo).toEqual(0);
+            this.bar = "test pollution?";
+          });
+        
+          it("prevents test pollution by having an empty `this` created for the next spec", function() {
+            expect(this.foo).toEqual(0);
+            expect(this.bar).toBe(undefined);
+          });
+        });
          
-    Spies
+        "
+        failing a spec
+        
+        qoOop
+        (===)
+        """""
+        
+        if you dont know how to make a test fail use the fail function
+        
+        describe("A spec using the fail function", function() {
+          var foo = function(x, callBack) {
+            if (x) {
+              callBack();
+            }
+          };
+        
+          it("should not call the callBack", function() {
+            foo(false, function() {
+              fail("Callback has been called");
+            });
+          });
+        });
+        "
+        
+        you can nest descibes to describe blocks
+        
+        qoOop
+        (===)
+        """"""
+        
+        
+        Disabling Suites
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        to disable a suite use xdescribe, nothing is run in there
+        their results show as pending
+        
+        
+        Pending Specs
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        any spec  with xit function
+        any spec without a fn
+        a pending() in a sepc
+        
+        
+             
+        Spies
+              
+              
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        a test double fn
+        stubs any fn and track calls to it and its args
+        only exists in the desrcibe or it block
+        you can describe what the spy will do with and()
+        
+        
+        
+        toHaveBeenCalled
+        
+        qoOop
+        (===)
+        """"""
+        
+        pass if spy was called
+        
+        
+        
+        toHaveBeenCalledTimes
+        
+        qoOop
+        (===)
+        """"""
+        
+        if spy was called a specific # of times
+        
+        
+        toHaveBeenCalledWith
+        
+        qoOop
+        (===)
+        """"""
+        
+        retruns true is the fn was called with a certain argument
+        
+        you can get any information about spy with .calls on the fn being spyed on
+        
+        
+        
+        Spies: createSpy
+        
+        qoOop
+        (===)
+        """"""
+        
+        creates a bareSpy with nothing to spy on
+        
+        
+        Spies: createSpyObj
+        
+        qoOop
+        (===)
+        """"""
+        
+        if you have seceral fn u want to track use jasmine.createSpyObj
+        
+        
+        
+        
+        Matching with more finesse
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        for not exact equality
+        jasmine.any takes technincally a constructor or class
+        its jus matching types
+        
+        qoOop
+        (===)
+        """"""
+        
+        jasmine.anything returns true if the actual value is not null or undefined.
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        jasmine.objectContaining is for key value pairs
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        jasmine.arrayContaining for certain values in an array
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        jasmine.stringMatching is regex comp
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        Custom asymmetric equality tester
+        
+        when you need granaular control of what you need to compare in a test result
+        
+        
+        
+        Jasmine Clock
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        used for testing and time dependent code
+        
+        you install it with  jasmine.clock().install
+        for  a spec that needs to manipulate time
+        
+        make sure u unistall it
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        making setTimeout and setInterval sync
+        
+        make one then use
+        jasmine.clock().tick(ms), to literally control time fowward
+        when the clock is installed time stands still
+        
+        
+        qoOop
+        (===)
+        """"""
+        
+        Mock date
+        
+        you can use jasmine to mock the current date
+        
+        
+        Asynchronous Support
+        
+        
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+               
+         indicate that a function is asynchronous: by taking an optional callback parameter, by returning a promise, or by using the async keyword in environments that support it.
+         
+         
+        async/await
+         
+        qoOop
+        (===)
+        """"""
+        
+        easiest way to deal with async, make an async fn and contain the async work with await which will return as a promise
+        supported by jasmine 2.7
+        rejected promise will cause a spec failure or suite failure in beforeAll or afterAll
+        
+        
+        Promises
+         
+        qoOop
+        (===)
+        """"""
+        
+        jasmine sees anything with a .then to be a promise so be careful u can use js Promise or one from a library
+        
+        
+        Callbacks
+         
+        qoOop
+        (===)
+        """"""
+        
+        this is error prone
+        the fn in a suite or spec will take a done
+        its impt that the done is called one and at the end of async work
+        a common error is to call done while the test is still running
+        
+        
+        
+        Handling failures
+         
+        qoOop
+        (===)
+        """"""
+        
+        failures do not always go to where they belong, sometimes u need to force a spec to fail
+        
+        failed promises
+        
+            beforeEach(function() {
+              return somePromiseReturningFunction();
+            });
+            
+            it('does a thing', function() {
+              // Since `.then` propagates rejections, this test will fail if
+              // the promise returned by asyncFunctionThatMightFail is rejected.
+              return asyncFunctionThatMightFail().then(function(value) {
+                // ...
+              });
+            });
+            
+            function somePromiseReturningFunction() {
+              return new Promise(function(resolve, reject) {
+                if (everythingIsOk()) {
+                  resolve();
+                } else {
+                  reject();
+                }
+              });
+            }
+            
+            
+            
+        Failing with async/await
+        
+                    
+            beforeEach(async function() {
+              // Will fail if the promise returned by
+              // someAsyncFunction is rejected.
+              await someAsyncFunction();
+            });
+            
+            it('does a thing', async function() {
+              // Will fail if doSomethingThatMightThrow throws.
+              doSomethingThatMightThrow();
+            
+              // Will fail if the promise returned by
+              // asyncFunctionThatMightFail is rejected.
+              const value = await asyncFunctionThatMightFail();
+              // ...
+            });
+            
+            
+        Failing with done
+            
+            2.1 +
+            beforeEach(function(done) {
+              setTimeout(function() {
+                try {
+                  riskyThing();
+                  done();
+                } catch (e) {
+                  done.fail(e);
+                }
+              });
+            });
+            
+            3.0+
+            beforeEach(function(done) {
+              setTimeout(function() {
+                var err = null;
+            
+                try {
+                  riskyThing();
+                } catch (e) {
+                  err = e;
+                }
+            
+                done(err);
+              });
+            });
+            
+         
+        Reporters and async
+        
+        qoOop
+        (===)
+        """"""
+        
+        as of jasmine 3.0 reporter event handlers can be async, with done, the callback should be the last parameter
+                
+        
+        Using the mock clock
+        
+        qoOop
+        (===)
+        """"""
+        
+        if an operation is async because of time-based behavior use the mock clock to force it to be synchronous and avoid waiting a long time for tests
+                
+                
+                
+        
+        Mocking AJAX
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+            
+        Tsting AJAX
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+                   
+        
+        to use it download mock-ajax.js and  place it in helpers file
+        
+        
+        basic usage across entire suite
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+                   
+        
+        When you want to mock out all ajax calls across an entire suite, use install() in a beforeEach.
+        
+        Because jasmine-ajax stubs out the global XMLHttpRequest for the page, you'll want to uninstall() in an afterEach so specs or setup that expect to make a real ajax request can.
+        it should mock the XMLHTTPRequest Object
+        
+        there is a state where we can run spinners on the intermed states of the XHR
+        
+        then tell the request what it should look like
+        
+        Now that we've told the request to respond, our callback gets called.
+        also specify responses ahead of time
+        
+         stubRequest with the url you want to return immediately. Then andReturn receives the same type of argument as respondWith
+         
+         If you only want to use it in a single spec, you can use withMock. withMock takes a function that will be called after ajax has been mocked, and the mock will be uninstalled when the function completes.
+        
+        
+        Custom Boot
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+        
+        ¶
+        If you want to customize your jasmine environment you can customize your boot.js file.
+        
+        The core of boot.js should stay the same, but you can add new things to the interface or configure things by changing this file.
+            
+            
+          
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        Once the core jasmine interface has been loaded, you can add new functions or rewrite existing functions.
+        , we're adding some aliases so before is the same as beforeEach
+        s the same as afterEach
+         context is the same as describe
           
           
+        Adding a customer helper
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        you  cand add yr custom reporter in addition or in place of jsApiReporter and htmlReporter
+        you can also customize how specs are filtered from the current run by changing the env.specFilter function
+        Alternately, specs to be run may also be specified after the tests have been parsed by passing an array of suite or spec IDs to the execute function. These IDs can be gleaned by traversing the tree of parsed tests accessible via env.topSuite().
+        
+        By default, Jasmine will begin execution when the onload event is triggered in the browser. Replace this portion, if you want to wait for something else before calling execute
+        
+        Helper function to add the Jasmine public interface to the correct object.
+        
+        
+        
+        Custom Equality
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+            
+            
+        Custom Equality Testers
+          
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+            
+        if it knows how to compare 2 itemns it should rtrn true or false
+        when it returns undefined that means the custom et doesnt know how to compare it
+        register a tester in the beforeEach
+        if the custom tester returns false no other testing is done
+        
+        
+        
+        Custom Matcher
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+    a custom matcher is that method that is takes the expected value the method of an expect()
+    
+    
+    
+    Matcher Factories
           -"""-.__
          /    '  \
         ;  '.  :  c
         "\._ ) ::-"
            ""m "
-    a test double fn
-    stubs any fn and track calls to it and its args
-    only exists in the desrcibe or it block
-    you can describe what the spy will do with and()
+           
+    customer matcher fn are factories that get 2 args
+    util:
+    refer to https://github.com/jasmine/jasmine/blob/master/src/core/matchers/matchersUtil.js for a list
+    customEqualityTesters, used only if util.equals is called
+    it returns with a factory fn for your custom purpose
     
     
-    
-    toHaveBeenCalled
-    
-    qoOop
-    (===)
-    """"""
-    
-    pass if spy was called
-    
-    
-    
-    toHaveBeenCalledTimes
-    
-    qoOop
-    (===)
-    """"""
-    
-    if spy was called a specific # of times
-    
-    
-    toHaveBeenCalledWith
-    
-    qoOop
-    (===)
-    """"""
-    
-    retruns true is the fn was called with a certain argument
-    
-    you can get any information about spy with .calls on the fn being spyed on
-    
-    
-    
-    Spies: createSpy
-    
-    qoOop
-    (===)
-    """"""
-    
-    creates a bareSpy with nothing to spy on
-    
-    
-    Spies: createSpyObj
-    
-    qoOop
-    (===)
-    """"""
-    
-    if you have seceral fn u want to track use jasmine.createSpyObj
-    
-    
-    
-    
-    Matching with more finesse
-    
+    Result
           -"""-.__
          /    '  \
         ;  '.  :  c
         "\._ ) ::-"
            ""m "
-    
-    for not exact equality
-    jasmine.any takes technincally a constructor or class
-    its jus matching types
-    
-    qoOop
-    (===)
-    """"""
-    
-    jasmine.anything returns true if the actual value is not null or undefined.
+           
+    compare fn must return an object which is the boolean result of the matcher in the "pass" property
+    if an expact is chained with .not() it reverse whether the spec passes or fails the test
     
     
-    qoOop
-    (===)
-    """"""
-    
-    jasmine.objectContaining is for key value pairs
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    jasmine.arrayContaining for certain values in an array
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    jasmine.stringMatching is regex comp
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    Custom asymmetric equality tester
-    
-    when you need granaular control of what you need to compare in a test result
-    
-    
-    
-    Jasmine Clock
-    
+    Failure Messages
           -"""-.__
          /    '  \
         ;  '.  :  c
         "\._ ) ::-"
            ""m "
     
-    used for testing and time dependent code
+    if undefined the expectation will try to make a failure message
+    if the return val has a message prop it will use that in message creation
+           
+           
+    Custom negative comparisons
     
-    you install it with  jasmine.clock().install
-    for  a spec that needs to manipulate time
-    
-    make sure u unistall it
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    making setTimeout and setInterval sync
-    
-    make one then use
-    jasmine.clock().tick(ms), to literally control time fowward
-    when the clock is installed time stands still
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    Mock date
-    
-    you can use jasmine to mock the current date
-    
-    
-    Asynchronous Support
-    
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+     
+     include another key, negativeCompare alongside compare, for which the value is a function to invoke when .not is used. This function/key is optional.
+     
+     
+    Custom negative comparisons
     
           -"""-.__
          /    '  \
@@ -832,396 +1171,151 @@
         "\._ ) ::-"
            ""m "
            
-           
-     indicate that a function is asynchronous: by taking an optional callback parameter, by returning a promise, or by using the async keyword in environments that support it.
-     
-     
-     
-    qoOop
-    (===)
-    """"""
-    
-    Using callbacks
-    
-    calls to the before and after fn take a done fn that is called when async work is complete
-    spec will not start before done fn is called in beforeEach, spec will not complete till done is called
-     
-     
-    qoOop
-    (===)
-    """"""
-    
-    using promises
-    
-    the spec will not start until the promise returned from the call to beforeEach above is settle
-    this spec will not complete until the promise that it returns is settled.
-    If the promise is rejected, the spec will fail.
-    important to call !browserHasPromises()
-    
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    using async/await
-    
-    for before and after fn u can give an async fn
-    spec does not start until promise from before or after settls
-    does not end till promise that the spec retuns ends
-    
-    
-    qoOop
-    (===)
-    """"""
-    
-    by default jasmine waits 5 seconds for tests to complete
-    to change proivde a number to the 3rd parameter of it or outside your top level describe set jasmine.DEFAULT_TIMEOUT_INTERVAL
-    
-    
-    Mocking AJAX
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-        
-        
-    Tsting AJAX
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
+    register the  matcher with  jasmine.addMatchers(customMatchers);
+    it will be availble for every expectation
                
     
-    to use it download mock-ajax.js and  place it in helpers file
+        Custom Reporter
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+    its just an object with functions, hoever it never throws an error if you miss a listed function
     
-    
-    basic usage across entire suite
+            
+    jasmineStarted
           -"""-.__
          /    '  \
         ;  '.  :  c
         "\._ ) ::-"
            ""m "
-               
-    
-    When you want to mock out all ajax calls across an entire suite, use install() in a beforeEach.
-    
-    Because jasmine-ajax stubs out the global XMLHttpRequest for the page, you'll want to uninstall() in an afterEach so specs or setup that expect to make a real ajax request can.
-    it should mock the XMLHTTPRequest Object
-    
-    there is a state where we can run spinners on the intermed states of the XHR
-    
-    then tell the request what it should look like
-    
-    Now that we've told the request to respond, our callback gets called.
-    also specify responses ahead of time
-    
-     stubRequest with the url you want to return immediately. Then andReturn receives the same type of argument as respondWith
-     
-     If you only want to use it in a single spec, you can use withMock. withMock takes a function that will be called after ajax has been mocked, and the mock will be uninstalled when the function completes.
-    
-    
-    Custom Boot
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-        
-    
-    ¶
-    If you want to customize your jasmine environment you can customize your boot.js file.
-    
-    The core of boot.js should stay the same, but you can add new things to the interface or configure things by changing this file.
-        
-        
-      
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    Once the core jasmine interface has been loaded, you can add new functions or rewrite existing functions.
-    , we're adding some aliases so before is the same as beforeEach
-    s the same as afterEach
-     context is the same as describe
-      
-      
-    Adding a customer helper
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-    
-    you  cand add yr custom reporter in addition or in place of jsApiReporter and htmlReporter
-    you can also customize how specs are filtered from the current run by changing the env.specFilter function
-    Alternately, specs to be run may also be specified after the tests have been parsed by passing an array of suite or spec IDs to the execute function. These IDs can be gleaned by traversing the tree of parsed tests accessible via env.topSuite().
-    
-    By default, Jasmine will begin execution when the onload event is triggered in the browser. Replace this portion, if you want to wait for something else before calling execute
-    
-    Helper function to add the Jasmine public interface to the correct object.
-    
-    
-    
-    Custom Equality
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-        
-        
-        
-    Custom Equality Testers
-      
-          -"""-.__
-         /    '  \
-        ;  '.  :  c
-        "\._ ) ::-"
-           ""m "
-        
-    if it knows how to compare 2 itemns it should rtrn true or false
-    when it returns undefined that means the custom et doesnt know how to compare it
-    register a tester in the beforeEach
-    if the custom tester returns false no other testing is done
-    
-    
-    
-    Custom Matcher
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-        
-a custom matcher is that method that is takes the expected value the method of an expect()
-
-
-
-Matcher Factories
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-customer matcher fn are factories that get 2 args
-util:
-refer to https://github.com/jasmine/jasmine/blob/master/src/core/matchers/matchersUtil.js for a list
-customEqualityTesters, used only if util.equals is called
-it returns with a factory fn for your custom purpose
-
-
-Result
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-compare fn must return an object which is the boolean result of the matcher in the "pass" property
-if an expact is chained with .not() it reverse whether the spec passes or fails the test
-
-
-Failure Messages
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-
-if undefined the expectation will try to make a failure message
-if the return val has a message prop it will use that in message creation
-       
-       
-Custom negative comparisons
-
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
- 
- include another key, negativeCompare alongside compare, for which the value is a function to invoke when .not is used. This function/key is optional.
- 
- 
-Custom negative comparisons
-
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-register the  matcher with  jasmine.addMatchers(customMatchers);
-it will be availble for every expectation
            
-
-    Custom Reporter
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
+    a fn where all the specs are loaded but the suite test has not started
+    suiteInfo contains all the info about the suite
+           
+           
+    suiteStarted
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+           
+    called when a describe starts to run
+    
+    
+    specStarted
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+           
+    when an it even before and after start to run
+    
+    
+    specDone
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+           
+    a reporter wont know if a spec has failed without this fn
+    
+    
+    suiteDone
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+           
+    all specs and child suites have run, a reporter also wont know if specs in the
+    suite has failed
+    
+    
+    
+    jasmineDone
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+    
+    when the entire suite has finished, a reporter needs to know about it
+    
+           
+    Register the reporter with jasmine
+          -"""-.__
+         /    '  \
+        ;  '.  :  c
+        "\._ ) ::-"
+           ""m "
+           
+    jasmine.getEnv().addReporter(myReporter);
+            
+            
+            
         
-its just an object with functions, hoever it never throws an error if you miss a listed function
-
+        Jasmine API
+                      .....
+                 .d$$$$*$$$$$$bc
+              .d$P"    d$$    "*$$.
+             d$"      4$"$$      "$$.
+           4$P   /    $F ^$F    /   "$c
+          z$%        d$   3$        ^$L
+         4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
+         $$$F"""""""$F""""""$F"""""C$$*$
+        .$%"$$e    d$       3$   z$$"  $F
+        4$    *$$.4$"        $$d$P"    $$
+        4$      ^*$$.       .d$F       $$
+        4$   /   d$"$$c   z$$"3$    /  $F
+         $L     4$"  ^*$$$P"   $$     4$"
+         3$     $F   .d$P$$e   ^$F    $P
+          $$   d$  .$$"    "$$c 3$   d$
+           *$.4$"z$$"        ^*$$$$ $$
+            "$$$$P"     /       "$$$P
+              *$b.             .d$P"
+                "$$$ec.....ze$$$"
+                    "**$$$**""
         
-jasmineStarted
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-a fn where all the specs are loaded but the suite test has not started
-suiteInfo contains all the info about the suite
-       
-       
-suiteStarted
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-called when a describe starts to run
-
-
-specStarted
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-when an it even before and after start to run
-
-
-specDone
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-a reporter wont know if a spec has failed without this fn
-
-
-suiteDone
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-all specs and child suites have run, a reporter also wont know if specs in the
-suite has failed
-
-
-
-jasmineDone
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-
-when the entire suite has finished, a reporter needs to know about it
-
-       
-Register the reporter with jasmine
-      -"""-.__
-     /    '  \
-    ;  '.  :  c
-    "\._ ) ::-"
-       ""m "
-       
-jasmine.getEnv().addReporter(myReporter);
+        Global
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
         
         
+               /             \
+                      ^
         
-    
-    Jasmine API
-                  .....
-             .d$$$$*$$$$$$bc
-          .d$P"    d$$    "*$$.
-         d$"      4$"$$      "$$.
-       4$P   /    $F ^$F    /   "$c
-      z$%        d$   3$        ^$L
-     4$$$$$$$$$$$$$$$$$$$$$$$$$$$$$F
-     $$$F"""""""$F""""""$F"""""C$$*$
-    .$%"$$e    d$       3$   z$$"  $F
-    4$    *$$.4$"        $$d$P"    $$
-    4$      ^*$$.       .d$F       $$
-    4$   /   d$"$$c   z$$"3$    /  $F
-     $L     4$"  ^*$$$P"   $$     4$"
-     3$     $F   .d$P$$e   ^$F    $P
-      $$   d$  .$$"    "$$c 3$   d$
-       *$.4$"z$$"        ^*$$$$ $$
-        "$$$$P"     /       "$$$P
-          *$b.             .d$P"
-            "$$$ec.....ze$$$"
-                "**$$$**""
-    
-    Global
-    
-                  v
-           \             /
-    
-              _________
-     `       /         \      '
-            /  \     /  \
-           /             \
-    _     /   _ _ . _ _   \    _
-          \               /
-           \             /
-            \  /     \  /
-     '       \_________/      `
-    
-    
-           /             \
-                  ^
-    
-    Methods
-    
-      --------------------
-      / ~~~~~     ~~~~~ \
-     /|     |     |\
-     W   ---  / \  ---   W
-     \.      |o o|      ./
-      |                 |
-      \    #########    /
-       \  ## ----- ##  /
-        \##         ##/
-        ---------------
-    
+        Methods
+        
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+        

@@ -415,109 +415,77 @@ describe("Manually ticking the Jasmine Clock", function() {
         });
     });
   
-    describe("A spec using done.fail", function() {
-      var foo = function(x, callBack1, callBack2) {
-        if (x) {
-          setTimeout(callBack1, 0);
-        } else {
-          setTimeout(callBack2, 0);
-        }
-      };
-
-      it("should not call the second callBack", function(done) {
-        foo(true,
-          done,
-          function() {
-            done.fail("Second callback has been called");
-          }
-        );
-      });
+    describe("A spec using done", function() {
+        beforeEach(function(done) {
+          setTimeout(function() {
+        
+            // do some stuff
+        
+            done();
+        
+          }, 100);
+        });
+        
+        
+        it('does a thing', function(done) {
+          someAsyncFunction(result) {
+            expect(result).toEqual(someExpectedValue);
+            done();
+          });
+        });
     });
     
     
-  describe("Using promises", function() {
-    if (!browserHasPromises()) {
-      return;
-    }
-    
+describe("Using promises", function() {
     beforeEach(function() {
-      return soon().then(function() {
-        value = 0;
+      return new Promise(function(resolve, reject) {
+        // do something asynchronous
+        resolve();
       });
     });
-
-    it("should support async execution of test preparation and expectations", function() {
-      return soon().then(function() {
-        value++;
-        expect(value).toBeGreaterThan(0);
+    
+    it('does a thing', function() {
+      return someAsyncFunction().then(function (result) {
+        expect(result).toEqual(someExpectedValue);
       });
     });
-  });
+});
 
 
 
 describe("Using async/await", function() {
-    if (!browserHasAsyncAwaitSupport()) {
-      return;
-    }
-
-
     beforeEach(async function() {
-      await soon();
-      value = 0;
+      await someLongSetupFunction();
     });
-
-
-    it("should support async execution of test preparation and expectations", async function() {
-      await soon();
-      value++;
-      expect(value).toBeGreaterThan(0);
+    
+    it('does a thing', async function() {
+      const result = await someAsyncFunction();
+      expect(result).toEqual(someExpectedValue);
     });
-  });
-
-  describe("long asynchronous specs", function() {
-    beforeEach(function(done) {
-      done();
-    }, 1000);
-
-    it("takes a long time", function(done) {
-      setTimeout(function() {
-        done();
-      }, 9000);
-    }, 10000);
-
-    afterEach(function(done) {
-      done();
-    }, 1000);
-  });
-
-  function soon() {
-    return new Promise(function(resolve, reject) {
-      setTimeout(function() {
-        resolve();
-      }, 1);
-    });
-  }
-
-  function browserHasPromises() {
-    return typeof Promise !== 'undefined';
-  }
-
-  function getAsyncCtor() {
-    try {
-      eval("var func = async function(){};");
-    } catch (e) {
-      return null;
-    }
-
-    return Object.getPrototypeOf(func).constructor;
-  }
-
-  function browserHasAsyncAwaitSupport() {
-    return getAsyncCtor() !== null;
-  }
 });
 
+function doSomethingLater(callback) {
+  setTimeout(function() {
+    callback(12345);
+  }, 10000);
+}
+
+describe('doSomethingLater', function() {
+  beforeEach(function() {
+    jasmine.clock().install();
+  });
+
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
+
+  it('does something after 10 seconds', function() {
+    const callback = jasmine.createSpy('callback');
+    doSomethingLater(callback);
+    jasmine.clock().tick(10000);
+    expect(callback).toHaveBeenCalledWith(12345);
+  });
+});
 
 describe("mocking ajax", function() {
 
