@@ -787,6 +787,99 @@ when you need granaular control of what you need to compare in a test result
 
 
 
+Jasmine Clock
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+
+used for testing and time dependent code
+
+you install it with  jasmine.clock().install
+for  a spec that needs to manipulate time
+
+make sure u unistall it
+
+
+qoOop
+(===)
+""""""
+
+making setTimeout and setInterval sync
+
+make one then use
+jasmine.clock().tick(ms), to literally control time fowward
+when the clock is installed time stands still
+
+
+qoOop
+(===)
+""""""
+
+Mock date
+
+you can use jasmine to mock the current date
+
+
+Asynchronous Support
+
+
+      -"""-.__
+     /    '  \
+    ;  '.  :  c
+    "\._ ) ::-"
+       ""m "
+       
+       
+ indicate that a function is asynchronous: by taking an optional callback parameter, by returning a promise, or by using the async keyword in environments that support it.
+ 
+ 
+ 
+qoOop
+(===)
+""""""
+
+Using callbacks
+
+calls to the before and after fn take a done fn that is called when async work is complete
+spec will not start before done fn is called in beforeEach, spec will not complete till done is called
+ 
+ 
+qoOop
+(===)
+""""""
+
+using promises
+
+the spec will not start until the promise returned from the call to beforeEach above is settle
+this spec will not complete until the promise that it returns is settled.
+If the promise is rejected, the spec will fail.
+important to call !browserHasPromises()
+
+
+
+qoOop
+(===)
+""""""
+
+using async/await
+
+for before and after fn u can give an async fn
+spec does not start until promise from before or after settls
+does not end till promise that the spec retuns ends
+
+
+qoOop
+(===)
+""""""
+
+by default jasmine waits 5 seconds for tests to complete
+to change proivde a number to the 3rd parameter of it or outside your top level describe set jasmine.DEFAULT_TIMEOUT_INTERVAL
+
+
+  
 
 
 Jasmine API

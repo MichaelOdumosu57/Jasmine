@@ -282,6 +282,172 @@ describe("custom asymmetry", function() {
       });
     });
   });
+  
+  
+  
+describe("Manually ticking the Jasmine Clock", function() {
+  var timerCallback;
+
+  beforeEach(function() {
+    timerCallback = jasmine.createSpy("timerCallback");
+    jasmine.clock().install();
+  });
+
+  afterEach(function() {
+    jasmine.clock().uninstall();
+  });
+
+
+  it("causes a timeout to be called synchronously", function() {
+    setTimeout(function() {
+      timerCallback();
+    }, 100);
+
+    expect(timerCallback).not.toHaveBeenCalled();
+
+    jasmine.clock().tick(101);
+
+    expect(timerCallback).toHaveBeenCalled();
+  });
+
+  it("causes an interval to be called synchronously", function() {
+    setInterval(function() {
+      timerCallback();
+    }, 100);
+
+    expect(timerCallback).not.toHaveBeenCalled();
+
+    jasmine.clock().tick(101);
+    expect(timerCallback.calls.count()).toEqual(1);
+
+    jasmine.clock().tick(50);
+    expect(timerCallback.calls.count()).toEqual(1);
+
+    jasmine.clock().tick(50);
+    expect(timerCallback.calls.count()).toEqual(2);
+  });
+
+
+
+    describe("Mocking the Date object", function(){
+        it("mocks the Date object and sets it to a given time", function() {
+          var baseTime = new Date(2013, 9, 23);
+        
+        
+          jasmine.clock().mockDate(baseTime);
+        
+          jasmine.clock().tick(50);
+          expect(new Date().getTime()).toEqual(baseTime.getTime() + 50);
+        });
+    });
+  
+    describe("A spec using done.fail", function() {
+      var foo = function(x, callBack1, callBack2) {
+        if (x) {
+          setTimeout(callBack1, 0);
+        } else {
+          setTimeout(callBack2, 0);
+        }
+      };
+
+      it("should not call the second callBack", function(done) {
+        foo(true,
+          done,
+          function() {
+            done.fail("Second callback has been called");
+          }
+        );
+      });
+    });
+    
+    
+  describe("Using promises", function() {
+    if (!browserHasPromises()) {
+      return;
+    }
+    
+    beforeEach(function() {
+      return soon().then(function() {
+        value = 0;
+      });
+    });
+
+    it("should support async execution of test preparation and expectations", function() {
+      return soon().then(function() {
+        value++;
+        expect(value).toBeGreaterThan(0);
+      });
+    });
+  });
+
+
+
+describe("Using async/await", function() {
+    if (!browserHasAsyncAwaitSupport()) {
+      return;
+    }
+
+
+    beforeEach(async function() {
+      await soon();
+      value = 0;
+    });
+
+
+    it("should support async execution of test preparation and expectations", async function() {
+      await soon();
+      value++;
+      expect(value).toBeGreaterThan(0);
+    });
+  });
+
+  describe("long asynchronous specs", function() {
+    beforeEach(function(done) {
+      done();
+    }, 1000);
+
+    it("takes a long time", function(done) {
+      setTimeout(function() {
+        done();
+      }, 9000);
+    }, 10000);
+
+    afterEach(function(done) {
+      done();
+    }, 1000);
+  });
+
+  function soon() {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        resolve();
+      }, 1);
+    });
+  }
+
+  function browserHasPromises() {
+    return typeof Promise !== 'undefined';
+  }
+
+  function getAsyncCtor() {
+    try {
+      eval("var func = async function(){};");
+    } catch (e) {
+      return null;
+    }
+
+    return Object.getPrototypeOf(func).constructor;
+  }
+
+  function browserHasAsyncAwaitSupport() {
+    return getAsyncCtor() !== null;
+  }
+});
+
+
+
+    
+});
 });
     
 });
