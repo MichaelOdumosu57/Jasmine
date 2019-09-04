@@ -1888,3 +1888,613 @@ SuiteResult
         +-----------------+--------+-------------------------------------------+
         | args            | Array  | The arguments passed for this invocation. |
         +-----------------+--------+-------------------------------------------+
+        
+        
+
+        Namespaces
+        
+                      v
+               \             /
+        
+                  _________
+         `       /         \      '
+                /  \     /  \
+               /             \
+        _     /   _ _ . _ _   \    _
+              \               /
+               \             /
+                \  /     \  /
+         '       \_________/      `
+        
+        
+               /             \
+                      ^
+                      
+                      
+        jasmine
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+        properties
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+                         
+(static) DEFAULT_TIMEOUT_INTERVAL
+Default number of milliseconds Jasmine will wait for an asynchronous spec to complete.
+
+(static) MAX_PRETTY_PRINT_ARRAY_LENGTH
+Maximum number of array elements to display when pretty printing objects. This will also limit the number of keys and values displayed for an object. Elements past this number will be ellipised.
+
+(static) MAX_PRETTY_PRINT_CHARS
+Maximum number of charasters to display when pretty printing objects. Characters past this number will be ellipised.
+
+(static) MAX_PRETTY_PRINT_DEPTH
+Maximum object depth the pretty printer will print to. Set this to a lower value to speed up pretty printing if you have large objects.
+                            
+                              
+(static) addCustomEqualityTester(tester)
+Add a custom equality tester for the current scope of specs.
+
+Note: This is only callable from within a beforeEach, it, or beforeAll.
+
+A function which takes two arguments to compare and returns a true or false comparison result if it knows how to compare them, and undefined if it doesnt.
+
+(static) addMatchers(matchers)
+Add custom matchers for the current scope of specs.
+
+Note: This is only callable from within a beforeEach, it, or beforeAll.
+
+
+(static) addMatchers(matchers)
+Add custom matchers for the current scope of specs.
+
+Note: This is only callable from within a beforeEach, it, or beforeAll.
+
+the matchers are object with keys as matches and values as the actual matcher
+
+
+
+(static) any(class)
+Get a matcher, usable in any matcher that uses Jasmine's equality (e.g. toEqual, toContain, or toHaveBeenCalledWith), that will succeed if the actual value being compared is an instance of the specified class/constructor.
+
+class, the constructor to check against
+
+
+(static) anything()
+Get a matcher, usable in any matcher that uses Jasmine's equality (e.g. toEqual, toContain, or toHaveBeenCalledWith), that will succeed if the actual value being compared is not null and not undefined.
+
+
+(static) arrayContaining(sample)
+Get a matcher, usable in any matcher that uses Jasmine's equality (e.g. toEqual, toContain, or toHaveBeenCalledWith), that will succeed if the actual value is an Array that contains at least the elements in the sample.
+
+
+(static) arrayWithExactContents(sample)
+Get a matcher, usable in any matcher that uses Jasmine's equality (e.g. toEqual, toContain, or toHaveBeenCalledWith), that will succeed if the actual value is an Array that contains all of the elements in the sample in any order.
+
+
+(static) clock() → {Clock}
+
+Get the currently booted mock {Clock} for this Jasmine environment.
+
+
+(static) createSpy(nameopt, originalFnopt) → {Spy}
+Create a bare Spy object. This won't be installed anywhere and will not have any implementation behind it.
+
++------------+----------+------------+-------------------------------------------------------------------+
+| Name       | Type     | Attributes | Description                                                       |
++------------+----------+------------+-------------------------------------------------------------------+
+| name       | String   | <optional> | Name to give the spy. This will be displayed in failure messages. |
++------------+----------+------------+-------------------------------------------------------------------+
+| originalFn | function | <optional> | Function to act as the real implementation.                       |
++------------+----------+------------+-------------------------------------------------------------------+
+
+
+(static) createSpyObj(baseNameopt, methodNames) → {Object}
+Create an object with multiple Spys as its members.
+
+
+
+| Name        | Type                    | Attributes | Description |
++-------------+-------------------------+------------+--------------------------------------------------------------------------------
+| baseName    | String                  | <optional> | Base name for the spies in the object.|
++-------------+-------------------------+------------+---------------------------------------------------------------------------------------------+
+| methodNames | Array.<String> | Object |            |Array of methodNames create spies or Object keys = methodNames value = returnVal |
++-------------+-------------------------+------------+--------------------------------------------------------------------------------
+
+(static) getEnv() → {Env}
+Get the currently booted Jasmine Environment.
+
+
+(static) objectContaining(sample)
+Get a matcher, usable in any matcher that uses Jasmine's equality (e.g. toEqual, toContain, or toHaveBeenCalledWith), that will succeed if the actual value being compared contains at least the keys and values.
+
+sample is the object subset of keys and values as a pair that must be contained in the actual
+
+
+(static) stringMatching(expected)
+
+succeed if actual matches the RegExp or String
+
+
+
+                      
+        matchers
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+nothing()
+expect nothing explicitly.
+
+ex
+expect().nothing();
+
+
+
+
+toBe(expected)
+expect the actual value to be === to the expected value.
+where thing is an object
+try to avoid testing for obj matches
+
+ex
+expect(thing).toBe(realThing);
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toBeDefined()
+expect the actual not to be undefined
+
+ex
+expect(result).toBeDefined();
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        
+toBeFalsy()
+toBeTruthy()
+expect actual to type convert to true|false
+
+ex
+expect(result).toBeFalsy();
+expect(result).toBeTruthy();
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toBeGreaterThan(expected)
+toBeGreaterThanOrEqual(expected)
+toBeLessThan(expected)
+toBeLessThanOrEqual(expected)
+expect actual > expected
+expected is a ##
+
+ex
+expect(result).toBeGreaterThan(3);
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+
+toBeNaN()
+expect to not be a ##
+
+
+expect(thing).toBeNaN();
+
+
+toBeNegativeInfinity()
+toBePositiveInfinity()
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toBeNull()
+expect value to be null only
+
+expect(result).toBeNull();
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toBeUndefined()
+expect val to be undefined only
+
+expect(result).toBeUndefined();
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+
+toContain(expected)
+actual val to contain a specific val
+
+ex
+expect(array).toContain(anElement);
+expect(string).toContain(substring);
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toEqual(expected)
+expect the actual value to be equal to the expected, using deep equality comparison.
+
+expected
+expect(bigObject).toEqual({"foo": ['bar', 'baz']});
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+
+toHaveBeenCalled()
+expect the actual (a Spy) to have been called.
+
+
+expect(mySpy).toHaveBeenCalled();
+expect(mySpy).not.toHaveBeenCalled();
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+
+
+toHaveBeenCalledBefore(expected)
+expect the actual value (a Spy) to have been called before another Spy.
+
+
+
+expect(mySpy).toHaveBeenCalledBefore(otherSpy);
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toHaveBeenCalledTimes(expected)
+
+spy was called x amnt of times
+
+expected is # of invocations to look fr
+
+expect(mySpy).toHaveBeenCalledTimes(3);
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toHaveBeenCalledWith()
+expect the actual (a Spy) to have been called with particular arguments at least once.
+
+expect(mySpy).toHaveBeenCalledWith('foo', 'bar', 2);
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        
+        
+toMatch(expected)
+expect the actual value to match a regular expression or string
+
+
+expect("my string").toMatch(/string$/);
+expect("other string").toMatch("her");
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+toThrow(expectedopt)
+check if a functions retruns, if theres a value it will check if the fn throws an error
+if this doesnt work try returns
+
+expect(function() { return 'things'; }).toThrow('foo');
+expect(function() { return 'stuff'; }).toThrow();
+
+
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+toThrowError(expectedopt, messageopt)
+expect a function to throw an Error.
+
+╔══════════╦═════════════════╦════════════╦═══════════════════════════════════════════════════════════════════════════════════════════╦══════════════════════╗
+║ Name     ║ Type            ║ Attributes ║ Description                                                                               ║                      ║
+╠══════════╬═════════════════╬════════════╬═══════════════════════════════════════════════════════════════════════════════════════════╬══════════════════════╣
+║ expected ║ Error           ║ <optional> ║ "Error constructor the object that was thrown needs to be an instance of. If not provided ║ Error will be used." ║
+╠══════════╬═════════════════╬════════════╬═══════════════════════════════════════════════════════════════════════════════════════════╬══════════════════════╣
+║ message  ║ RegExp | String ║ <optional> ║ The message that should be set on the thrown Error                                        ║                      ║
+╚══════════╩═════════════════╩════════════╩═══════════════════════════════════════════════════════════════════════════════════════════╩══════════════════════╝
+
+expect(function() { return 'things'; }).toThrowError(MyCustomError, 'message');
+expect(function() { return 'things'; }).toThrowError(MyCustomError, /bar/);
+expect(function() { return 'stuff'; }).toThrowError(MyCustomError);
+expect(function() { return 'other'; }).toThrowError(/foo/);
+expect(function() { return 'other'; }).toThrowError();
+
+
+
+        Spy#and
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+
+
+callFake(fn)
+tell the spy to call a fake implemetation
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+
+callThrough()
+Tell the spy to call through to the real implementation when invoked.
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+        
+        
+exec()
+Execute the current spy strategy
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+               
+identity() → {String}
+Return the identifying information for the spy.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+               
+returnValue(value)
+Tell the spy to return the value when invoked.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
+returnValues(…values)
+Tell the spy to return one of the specified values (sequentially) each time the spy is invoked.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
+stub()
+Tell the spy to do nothing when invoked. This is the default.
+
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
+throwError(something)
+Tell the spy to throw an error when invoked.
+
+must be error or string
+
+
+
+
+        Spy#calls
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+            
+            
+
+all() → {Array.<Spy.callData>}
+Get the raw calls array for this spy.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+               
+allArgs() → {Array}
+Get all of the arguments for each invocation of this spy in the order they were received.
+
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+               
+               
+any() → {Boolean}
+Check whether this spy has been invoked.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+               
+count() → {Integer}
+Get the number of invocations of this spy.
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+argsFor(index) → {Array}
+Get the arguments that were passed to a specific invocation of this spy.
+
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+first() → {ObjecSpy.callData}
+Get the first invocation of this spy.
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
+mostRecent() → {ObjecSpy.callData}
+Get the most recent invocation of this spy
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
+reset()
+Reset this spy as if it has never been called.
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+
+saveArgumentsByValue()
+Set this spy to do a shallow clone of arguments passed to each invocation.
+
+
+
+               
+
