@@ -1,4 +1,10 @@
-        
+
+use latest OAuth
+keep everything up date
+
+source jasmine.github.io
+
+
         read with LogiQL script
         tablke of contents
         
@@ -785,6 +791,29 @@
         
         when you need granaular control of what you need to compare in a test result
         
+ describe("custom asymmetry", function() {
+    var tester = {
+      asymmetricMatch: function(actual) {
+        var secondValue = actual.split(',')[1];
+        return secondValue === 'bar';
+      }
+    };
+
+    it("dives in deep", function() {
+      expect("foo,bar,baz,quux").toEqual(tester);
+    });
+
+    describe("when used with a spy", function() {
+      it("is useful for comparing arguments", function() {
+        var callback = jasmine.createSpy('callback');
+
+        callback('foo,bar,baz');
+
+        expect(callback).toHaveBeenCalledWith(tester);
+      });
+    });
+  });
+});        
         
         
         Jasmine Clock
@@ -812,6 +841,8 @@
         make one then use
         jasmine.clock().tick(ms), to literally control time fowward
         when the clock is installed time stands still
+        so when setTimeout is given 100, use the clock to tick past 100 to have the fn executed
+        jasmine clock is there to simulate time
         
         
         qoOop
@@ -834,7 +865,32 @@
                
                
          indicate that a function is asynchronous: by taking an optional callback parameter, by returning a promise, or by using the async keyword in environments that support it.
+
+        done
+        the callback way
+        describe("A spec using done.fail", function() {
+        var foo = function(x, callBack1, callBack2) {
+            if (x) {
+            setTimeout(callBack1, 0);
+            } else {
+            setTimeout(callBack2, 0);
+            }
+        };
+
+        it("should not call the second callBack", function(done) {
+            foo(true,
+            done,
+            function() {
+                done.fail("Second callback has been called");
+            }
+            );
+        });
+        });
+  });        
          
+        qoOop
+        (===)
+        """"""                 
          
         async/await
          
@@ -854,7 +910,9 @@
         """"""
         
         jasmine sees anything with a .then to be a promise so be careful u can use js Promise or one from a library
-        
+        file promise.js 
+
+        the spec doesnt start until the resolve in the beforeEach is settled and does not finish until after its own resolve fn is settled 
         
         Callbacks
          
@@ -862,11 +920,34 @@
         (===)
         """"""
         
-        this is error prone
-        the fn in a suite or spec will take a done
-        its impt that the done is called one and at the end of async work
-        a common error is to call done while the test is still running
-        
+ completed.
+	
+
+    describe("A spec using done.fail", function() {
+      var foo = function(x, callBack1, callBack2) {
+        if (x) {
+          setTimeout(callBack1, 0);
+        } else {
+          setTimeout(callBack2, 0);
+        }
+      };
+
+      it("should not call the second callBack", function(done) {
+        foo(true,
+          done,
+          function() {
+            done.fail("Second callback has been called");
+          }
+        );
+      });
+    });
+  });
+
+
+default ja=mine waits 5 sec for async specs to finish before a timeout failure 
+you can set it with the 2nd parameter to it
+or do this globally
+jasmine.DEFAULT_TIMEOUT_INTERVAL = 10000
         
         
         Handling failures
@@ -1410,6 +1491,11 @@
         Type
         matchers
                 
+        expectAsync(actual) → {async-matchers}
+
+        ex. 
+        await expectAsync(somePromise).toBeResolved();
+
                 
         fail(erroropt)
         Explicitly mark a spec as failed.
@@ -1546,7 +1632,35 @@
         
         testFunction	implementationCallback	<optional>
         Function that contains the code of your test. Will not be executed.
+
+
                 
+        async matchers 
+          --------------------
+          / ~~~~~     ~~~~~ \
+         /|     |     |\
+         W   ---  / \  ---   W
+         \.      |o o|      ./
+          |                 |
+          \    #########    /
+           \  ## ----- ##  /
+            \##         ##/
+            ---------------
+
+        Expectation
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+toBeRejected()
+.toBeRejectedWith({prop: 'value'});
+.toBeResolved();
+.toBeResolvedTo({prop: 'value'});
+
+
+                        
                 
         Type Definitions
           --------------------
@@ -1956,13 +2070,20 @@ Add custom matchers for the current scope of specs.
 Note: This is only callable from within a beforeEach, it, or beforeAll.
 
 
-(static) addMatchers(matchers)
-Add custom matchers for the current scope of specs.
+the matchers are object with keys as matches and values as the actual matcher
+
+
+(static) addCustomEqualityTester(tester)
+
+Add a custom equality tester for the current scope of specs.
 
 Note: This is only callable from within a beforeEach, it, or beforeAll.
 
-the matchers are object with keys as matches and values as the actual matcher
+(static) addSpyStrategy(name, factory)
 
+Add a custom spy strategy for the current scope of specs.
+
+Note: This is only callable from within a beforeEach, it, or beforeAll.
 
 
 (static) any(class)
@@ -2291,7 +2412,14 @@ expect(function() { return 'stuff'; }).toThrowError(MyCustomError);
 expect(function() { return 'other'; }).toThrowError(/foo/);
 expect(function() { return 'other'; }).toThrowError();
 
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "    
+toThrowMatching(predicate)
 
+expect(function() { throw new Error('nope'); }).toThrowMatching(function(thrown) { return thrown.message === 'nope'; });
 
         Spy#and
           --------------------
@@ -2515,6 +2643,76 @@ Set this spy to do a shallow clone of arguments passed to each invocation.
         
                /             \
                       ^
+
+command line 
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+failFast :Boolean
+
+Whether to stop execution of the suite after the first spec failure
+
+default false 
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+
+hideDisabled :Boolean
+
+Whether or not reporters should hide disabled specs from their output. Currently only supported by Jasmine's HTMLReporter
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+               
+
+oneFailurePerSpec :Boolean
+
+Whether to cause specs to only have one expectation failure.
+
+default false 
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+seed :function
+
+Seed to use as the basis of randomization. Null causes the seed to be determined randomly at the start of execution.
+default
+
+        null
+
+
+              -"""-.__
+             /    '  \
+            ;  '.  :  c
+            "\._ ) ::-"
+               ""m "
+
+specFilter :function
+
+Function to use to filter specs
+default :true 
+
+
+               
+
+
                       
         Reporter
           --------------------
